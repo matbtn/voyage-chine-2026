@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Carnet de voyage · Chine & Hong Kong · Août 2026</title>
+<style>
+  :root{
+    --ink:#16223a; --muted:#5d6b82; --line:#e7ecf3;
+    --bg:#eef2f8; --card:#ffffff;
+    --navy:#1f3a5f; --blue:#2E75B6; --teal:#0ea5a4; --amber:#f4a13c; --rose:#e2654f;
+    --grad:linear-gradient(135deg,#1f3a5f 0%,#2E75B6 55%,#0ea5a4 120%);
+    --shadow:0 6px 22px rgba(20,40,80,.10); --shadow-sm:0 2px 8px rgba(20,40,80,.07);
+    --r:18px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 16px 64px;}
+  h1,h2,h3{line-height:1.2;margin:0}
+  a{color:var(--blue);text-decoration:none}
+
+  .hero{background:var(--grad);color:#fff;border-radius:0 0 26px 26px;padding:30px 22px 26px;
+    box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .hero:before{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;
+    background:radial-gradient(circle,rgba(255,255,255,.18),transparent 70%);}
+  .hero .kicker{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;opacity:.85;font-weight:600}
+  .hero h1{font-size:30px;font-weight:800;margin:6px 0 4px;letter-spacing:-.5px}
+  .hero .route{font-size:14.5px;opacity:.92;font-weight:500}
+  .hero .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .chip{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.22);
+    border-radius:999px;padding:6px 13px;font-size:13px;font-weight:600}
+
+  nav{position:sticky;top:0;z-index:20;background:rgba(238,242,248,.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);margin:0 -16px 4px;padding:9px 16px;}
+  .nav-inner{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+  .nav-inner::-webkit-scrollbar{display:none}
+  .nav-inner a{flex:0 0 auto;font-size:13px;font-weight:600;color:var(--navy);
+    background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 13px;box-shadow:var(--shadow-sm)}
+
+  section{margin-top:26px}
+  .sec-title{display:flex;align-items:center;gap:10px;margin:0 2px 13px}
+  .sec-title .dot{width:9px;height:9px;border-radius:50%;background:var(--teal)}
+  .sec-title h2{font-size:20px;font-weight:800;color:var(--navy);letter-spacing:-.3px}
+  .hint{font-size:13px;color:var(--muted);margin:0 2px 12px}
+
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  .info{background:var(--card);border-radius:14px;padding:13px 14px;box-shadow:var(--shadow-sm);border:1px solid var(--line)}
+  .info .ic{font-size:18px}
+  .info .lbl{font-size:11.5px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);font-weight:700;margin-top:4px}
+  .info .val{font-size:14px;font-weight:600;margin-top:2px}
+  .info .val small{display:block;font-weight:500;color:var(--muted);font-size:12.5px;margin-top:2px}
+
+  .mapcard{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);border:1px solid var(--line);padding:10px 8px 4px;overflow:hidden}
+  .mapcard svg{width:100%;height:auto;display:block}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;padding:6px 8px 12px;font-size:12.5px;color:var(--muted)}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .legend i{width:22px;height:0;border-top:3px solid;display:inline-block;border-radius:2px}
+
+  details.step{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);border:1px solid var(--line);margin-bottom:14px;overflow:hidden}
+  summary.step-head{display:flex;align-items:center;gap:12px;padding:14px;min-height:68px;
+    cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent;list-style:none;transition:background .15s}
+  summary.step-head::-webkit-details-marker{display:none}
+  summary.step-head::marker{content:""}
+  summary.step-head:active{background:#eef3fa}
+  .num{flex:0 0 auto;width:38px;height:38px;border-radius:12px;background:var(--grad);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;box-shadow:var(--shadow-sm)}
+  .step-head .t{flex:1;min-width:0}
+  .step-head .t .city{font-size:17px;font-weight:800;color:var(--navy);letter-spacing:-.2px}
+  .step-head .t .when{font-size:12.5px;color:var(--muted);font-weight:600;margin-top:1px}
+  .nights{flex:0 0 auto;font-size:11.5px;font-weight:700;color:var(--blue);background:#eaf2fb;border-radius:999px;padding:4px 10px}
+  .chev{flex:0 0 auto;width:44px;height:44px;border-radius:50%;background:#edf3fa;color:var(--blue);
+    display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;
+    transition:transform .28s ease, background .15s;border:1px solid #e1e9f2}
+  details.step[open] .chev{transform:rotate(180deg);background:#e2ecf7}
+  .sb-inner{padding:2px 16px 18px}
+  .facts{display:flex;flex-direction:column;gap:7px;margin:4px 0 14px;background:#f7f9fc;border:1px solid var(--line);border-radius:12px;padding:11px 13px}
+  .facts div{font-size:13.5px}
+  .facts b{color:var(--navy)}
+  .hotelbox{display:flex;flex-direction:column;gap:9px;margin:4px 0 14px}
+  .hb{display:flex;gap:10px;background:#eef5fb;border:1px solid #d7e6f3;border-radius:12px;padding:11px 13px}
+  .hb .hbic{flex:0 0 auto;font-size:18px}
+  .hb .hbd{flex:1;min-width:0}
+  .hb .hbn{font-weight:800;font-size:14px;color:var(--navy)}
+  .hb .hba{font-size:12.5px;color:var(--muted);margin-top:2px}
+  .hb .hbw{font-size:11.5px;font-weight:700;color:var(--blue);margin-top:3px}
+  .hb .hbl{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+  .hb .hbl a{font-size:11.5px;font-weight:700;color:var(--blue);background:#fff;border:1px solid #cfe0f0;border-radius:999px;padding:5px 11px;display:inline-flex;align-items:center;gap:4px;-webkit-tap-highlight-color:transparent}
+  .hb .hbl a:active{background:#eef3fa;transform:scale(.97)}
+  .h-sub{font-size:12px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;color:var(--teal);margin:12px 0 6px}
+  ul.clean{margin:0;padding-left:18px}
+  ul.clean li{font-size:14px;margin:5px 0}
+  .tip{display:flex;gap:9px;background:#fff7ec;border:1px solid #f6e2c4;border-radius:12px;padding:10px 12px;margin-top:8px;font-size:13.5px}
+  .tip .ti{flex:0 0 auto}
+
+  .alert{background:#fff;border-left:5px solid var(--amber);border-radius:12px;box-shadow:var(--shadow-sm);padding:13px 15px;margin-bottom:11px}
+  .alert h4{margin:0 0 4px;font-size:14.5px;color:var(--navy)}
+  .alert p{margin:0;font-size:13.5px;color:#39455a}
+
+  .pcard{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);border:1px solid var(--line);padding:14px 16px;margin-bottom:14px}
+  .pcard h3{font-size:15.5px;color:var(--navy);font-weight:800;display:flex;align-items:center;gap:8px;margin-bottom:9px}
+  .pcard ul.clean li{margin:7px 0}
+  .pcard a{font-weight:700}
+  .pcard a:after{content:" ↗";font-size:11px;color:var(--muted)}
+  .apps{display:flex;flex-direction:column;gap:0}
+  .app{display:flex;gap:11px;align-items:flex-start;padding:10px 2px;border-top:1px solid var(--line)}
+  .app:first-child{border-top:0}
+  .app .ai{flex:0 0 auto;font-size:20px;width:26px;text-align:center}
+  .app .ad{flex:1;min-width:0}
+  .app .an{font-weight:700;font-size:14px;color:var(--ink)}
+  .app .ar{font-size:12.5px;color:var(--muted);margin-top:1px}
+  .app .at{flex:0 0 auto;font-size:10.5px;font-weight:800;padding:3px 8px;border-radius:999px;align-self:center}
+  .t-must{background:#e2f3ec;color:#0a7a55}
+  .t-before{background:#fdecd2;color:#9a5a09}
+  .two{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:4px}
+  .mini{background:#f7f9fc;border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+  .mini .ml{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:700}
+  .mini .mv{font-size:13.5px;font-weight:600;margin-top:2px}
+  .sos{display:flex;flex-wrap:wrap;gap:10px}
+  .sos .s{flex:1 1 30%;min-width:96px;background:#fff4f1;border:1px solid #f6d6cd;border-radius:12px;padding:10px;text-align:center}
+  .sos .s .n{font-size:21px;font-weight:800;color:var(--rose)}
+  .sos .s .c{font-size:11.5px;color:#8a5848;font-weight:600;margin-top:2px}
+
+  .book{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);border:1px solid var(--line);overflow:hidden}
+  .book .row{display:flex;gap:12px;align-items:flex-start;padding:13px 15px;border-bottom:1px solid var(--line)}
+  .book .row:last-child{border-bottom:0}
+  .book .d{flex:0 0 64px;font-weight:800;color:var(--navy);font-size:13px}
+  .book .m{flex:1}
+  .book .m .tr{font-weight:700;font-size:14px}
+  .book .m .su{font-size:12.5px;color:var(--muted);margin-top:1px}
+  .badge{flex:0 0 auto;font-size:11px;font-weight:800;padding:4px 9px;border-radius:999px;white-space:nowrap}
+  .b-amber{background:#fdecd2;color:#9a5a09}
+  .b-grey{background:#eceff4;color:#5d6b82}
+
+  .check{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);border:1px solid var(--line);padding:6px 4px}
+  .check .grp{font-size:12px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;color:var(--teal);padding:12px 14px 4px}
+  .check label{display:flex;gap:11px;align-items:flex-start;padding:9px 14px;font-size:14px;border-top:1px solid var(--line)}
+  .check label:first-of-type{border-top:0}
+  .check input{margin-top:3px;width:17px;height:17px;accent-color:var(--teal);flex:0 0 auto}
+  .check .due{margin-left:auto;font-size:11.5px;color:var(--muted);font-weight:600;white-space:nowrap}
+
+  footer{text-align:center;color:var(--muted);font-size:12.5px;margin-top:30px;padding-top:18px;border-top:1px solid var(--line)}
+  .foot-cn{font-size:15px;color:var(--navy);font-weight:700;margin-bottom:4px}
+
+  @media(max-width:430px){ .hero h1{font-size:25px} .grid{gap:10px} }
+  @media print{ nav{display:none} details.step{break-inside:avoid} body{background:#fff} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Carnet de voyage</div>
+    <h1>Chine &amp; Hong Kong</h1>
+    <div class="route">Pékin · Zhangjiajie · Guilin &amp; Yangshuo · Shenzhen · Hong Kong</div>
+    <div class="meta">
+      <span class="chip">🗓️ 8 – 27 août 2026</span>
+      <span class="chip">👨‍👩‍👧‍👦 2 adultes + 2 enfants</span>
+      <span class="chip">🌙 ≈ 17 jours</span>
+    </div>
+  </header>
+
+  <nav><div class="nav-inner">
+    <a href="#essentiel">Essentiel</a>
+    <a href="#carte">Carte</a>
+    <a href="#etapes">Étapes</a>
+    <a href="#reserver">À réserver</a>
+    <a href="#vigilance">Vigilance</a>
+    <a href="#pratique">Pratique</a>
+    <a href="#checklist">Check-list</a>
+  </div></nav>
+
+  <!-- ESSENTIEL -->
+  <section id="essentiel">
+    <div class="sec-title"><span class="dot"></span><h2>L’essentiel en un coup d’œil</h2></div>
+    <div class="grid">
+      <div class="info"><div class="ic">🛂</div><div class="lbl">Visa</div><div class="val">Sans visa 30 j<small>Ressortissants FR · jusqu’à fin 2026</small></div></div>
+      <div class="info"><div class="ic">📝</div><div class="lbl">Carte d’arrivée</div><div class="val">En ligne, ≤ 72 h<small>s.nia.gov.cn · QR à présenter</small></div></div>
+      <div class="info"><div class="ic">📱</div><div class="lbl">Paiement</div><div class="val">Alipay / WeChat<small>Carte Visa·MC liée + un peu de cash (¥)</small></div></div>
+      <div class="info"><div class="ic">🌐</div><div class="lbl">Internet</div><div class="val">VPN + eSIM<small>À installer AVANT (Google bloqué)</small></div></div>
+      <div class="info"><div class="ic">🌦️</div><div class="lbl">Météo (août)</div><div class="val">25–35 °C, humide<small>Saison des typhons au sud</small></div></div>
+      <div class="info"><div class="ic">💶</div><div class="lbl">Budget estimé</div><div class="val">≈ 7 600–9 300 €<small>Hors hôtel de Pékin (amis)</small></div></div>
+    </div>
+  </section>
+
+  <!-- CARTE -->
+  <section id="carte">
+    <div class="sec-title"><span class="dot"></span><h2>Le voyage sur la carte</h2></div>
+    <div class="mapcard">
+      <svg viewBox="0 0 380 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Carte du parcours en Chine">
+        <defs>
+          <linearGradient id="land" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#eaf1f8"/><stop offset="1" stop-color="#dfeaf4"/>
+          </linearGradient>
+          <linearGradient id="leg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#2E75B6"/><stop offset="1" stop-color="#0ea5a4"/>
+          </linearGradient>
+          <filter id="ds" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="1.5" stdDeviation="2" flood-color="#1f3a5f" flood-opacity="0.25"/>
+          </filter>
+        </defs>
+        <rect x="0" y="0" width="380" height="470" fill="#f3f8fc"/>
+        <path d="M70,70 C120,40 210,38 270,60 C320,78 348,120 342,175
+                 C338,220 360,250 338,290 C322,322 300,330 292,360
+                 C285,388 250,396 226,392 C150,384 96,360 78,300
+                 C60,242 40,210 56,160 C66,128 52,96 70,70 Z"
+              fill="url(#land)" stroke="#c5d6e8" stroke-width="1.5"/>
+        <text x="120" y="150" fill="#9fb4cc" font-size="13" font-weight="700" letter-spacing="2" transform="rotate(-6 120 150)">CHINE</text>
+        <text x="320" y="345" fill="#a9c6dc" font-size="9" transform="rotate(38 320 345)">Mer de Chine</text>
+        <g transform="translate(345,42)" fill="#8aa1bb">
+          <circle r="11" fill="#fff" stroke="#d4e0ec"/>
+          <path d="M0,-8 L3,2 L0,0 L-3,2 Z" fill="#2E75B6"/>
+          <text x="0" y="-13" font-size="7.5" text-anchor="middle" font-weight="700" fill="#2E75B6">N</text>
+        </g>
+        <path d="M22,40 Q140,40 244,86" fill="none" stroke="#b9c6d8" stroke-width="2" stroke-dasharray="2 5"/>
+        <text x="20" y="33" font-size="9.5" fill="#7d8ca3" font-weight="600">✈ depuis Paris · 8–9 août · ≈ 16 h</text>
+        <path d="M255,92 Q210,150 196,222" fill="none" stroke="url(#leg)" stroke-width="3.2" stroke-dasharray="1 7" stroke-linecap="round"/>
+        <path d="M196,238 Q172,275 168,302" fill="none" stroke="url(#leg)" stroke-width="3.2" stroke-linecap="round"/>
+        <path d="M176,318 Q224,338 244,356" fill="none" stroke="url(#leg)" stroke-width="3.2" stroke-linecap="round"/>
+        <path d="M249,372 L253,386" fill="none" stroke="url(#leg)" stroke-width="3.2" stroke-linecap="round"/>
+        <path d="M256,392 Q330,300 278,96" fill="none" stroke="#cdd8e6" stroke-width="1.8" stroke-dasharray="2 5"/>
+        <text x="300" y="250" font-size="9" fill="#a7b6c9" transform="rotate(80 300 250)">retour 27/08</text>
+        <g transform="translate(202,148)"><rect x="0" y="0" width="60" height="17" rx="8.5" fill="#ffffff" stroke="#d4e0ec"/><text x="6" y="12.5" font-size="9.5" font-weight="700" fill="#2E75B6">✈️ 2 h 30</text></g>
+        <g transform="translate(118,262)"><rect x="0" y="0" width="54" height="17" rx="8.5" fill="#ffffff" stroke="#d4e0ec"/><text x="6" y="12.5" font-size="9.5" font-weight="700" fill="#2E75B6">🚄 ~7 h</text></g>
+        <g transform="translate(150,346)"><rect x="0" y="0" width="54" height="17" rx="8.5" fill="#ffffff" stroke="#d4e0ec"/><text x="6" y="12.5" font-size="9.5" font-weight="700" fill="#2E75B6">🚄 ~3 h</text></g>
+        <g transform="translate(266,388)"><rect x="0" y="0" width="66" height="17" rx="8.5" fill="#ffffff" stroke="#d4e0ec"/><text x="6" y="12.5" font-size="9.5" font-weight="700" fill="#2E75B6">🚇 ~30 min</text></g>
+        <g filter="url(#ds)"><circle cx="255" cy="90" r="11" fill="#1f3a5f"/></g>
+        <text x="255" y="94" font-size="12" fill="#fff" text-anchor="middle" font-weight="800">1</text>
+        <g transform="translate(272,84)"><rect x="0" y="-10" width="92" height="30" rx="7" fill="#fff" stroke="#e1e9f2"/>
+          <text x="7" y="1" font-size="11" font-weight="800" fill="#1f3a5f">Pékin</text>
+          <text x="7" y="13" font-size="9" fill="#5d6b82">9–13 août · 4 n</text></g>
+        <g filter="url(#ds)"><circle cx="196" cy="230" r="11" fill="#2E75B6"/></g>
+        <text x="196" y="234" font-size="12" fill="#fff" text-anchor="middle" font-weight="800">2</text>
+        <g transform="translate(40,224)"><rect x="0" y="-10" width="118" height="30" rx="7" fill="#fff" stroke="#e1e9f2"/>
+          <text x="7" y="1" font-size="11" font-weight="800" fill="#1f3a5f">Zhangjiajie</text>
+          <text x="7" y="13" font-size="9" fill="#5d6b82">13–18 août · 5 n</text></g>
+        <g filter="url(#ds)"><circle cx="168" cy="310" r="11" fill="#0ea5a4"/></g>
+        <text x="168" y="314" font-size="12" fill="#fff" text-anchor="middle" font-weight="800">3</text>
+        <g transform="translate(8,304)"><rect x="0" y="-10" width="150" height="30" rx="7" fill="#fff" stroke="#e1e9f2"/>
+          <text x="7" y="1" font-size="11" font-weight="800" fill="#1f3a5f">Guilin &amp; Yangshuo</text>
+          <text x="7" y="13" font-size="9" fill="#5d6b82">18–22 août · 4 n</text></g>
+        <g filter="url(#ds)"><circle cx="246" cy="364" r="11" fill="#f4a13c"/></g>
+        <text x="246" y="368" font-size="12" fill="#fff" text-anchor="middle" font-weight="800">4</text>
+        <g transform="translate(262,352)"><rect x="0" y="-10" width="104" height="30" rx="7" fill="#fff" stroke="#e1e9f2"/>
+          <text x="7" y="1" font-size="11" font-weight="800" fill="#1f3a5f">Shenzhen</text>
+          <text x="7" y="13" font-size="9" fill="#5d6b82">22–25 août · 3 n</text></g>
+        <g filter="url(#ds)"><circle cx="254" cy="392" r="11" fill="#e2654f"/></g>
+        <text x="254" y="396" font-size="12" fill="#fff" text-anchor="middle" font-weight="800">5</text>
+        <g transform="translate(120,406)"><rect x="0" y="-10" width="120" height="30" rx="7" fill="#fff" stroke="#e1e9f2"/>
+          <text x="7" y="1" font-size="11" font-weight="800" fill="#1f3a5f">Hong Kong</text>
+          <text x="7" y="13" font-size="9" fill="#5d6b82">25–27 août · 2 n</text></g>
+      </svg>
+      <div class="legend">
+        <span><i style="border-color:#2E75B6"></i> ✈️ vol</span>
+        <span><i style="border-color:#0ea5a4"></i> 🚄 train</span>
+        <span><i style="border-color:#0ea5a4"></i> 🚇 métro / frontière</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ETAPES -->
+  <section id="etapes">
+    <div class="sec-title"><span class="dot"></span><h2>Le détail, étape par étape</h2></div>
+    <p class="hint">👉 Les 5 étapes du séjour — touchez l’une d’elles pour la déplier ou la replier.</p>
+
+    <details class="step" open>
+      <summary class="step-head"><div class="num">1</div>
+        <div class="t"><div class="city">Pékin</div><div class="when">9 → 13 août · arrivée Daxing 11:25</div></div>
+        <div class="nights">4 nuits</div><div class="chev">▾</div></summary>
+      <div class="sb-inner">
+        <div class="hotelbox">
+          <div class="hb"><div class="hbic">🏨</div><div class="hbd"><div class="hbn">Three Cats Homestay (Sanlitun · Gongti)</div><div class="hba">Unit 2, Yongli International, No. 21 Gongren Tiyuchang North Road, Chaoyang, Pékin</div><div class="hbw">9 → 13 août · 4 nuits · arrivée après 14:00</div><div class="hbl"><a href="https://maps.apple.com/?q=Three%20Cats%20Homestay%2021%20Gongren%20Tiyuchang%20North%20Road%20Chaoyang%20Beijing" target="_blank" rel="noopener">🧭 Plans</a><a href="https://uri.amap.com/search?keyword=Three%20Cats%20Homestay%2021%20Gongren%20Tiyuchang%20North%20Road%20Chaoyang%20Beijing" target="_blank" rel="noopener">📍 Amap</a></div></div></div>
+        </div>
+        <div class="facts">
+          <div><b>🛫 Transport —</b> arrivée 9/08 à PKX ; départ 13/08 vol 14:00 vers Zhangjiajie</div>
+        </div>
+        <div class="h-sub">À voir / à faire</div>
+        <ul class="clean">
+          <li><b>Cité Interdite</b> + place Tian’anmen — réservation en ligne obligatoire avec les passeports (quotas). Enchaîner avec la colline de Jingshan pour la vue.</li>
+          <li><b>Grande Muraille à Mutianyu</b> — la meilleure section en famille : télécabine à la montée, toboggan à la descente, moins de foule que Badaling.</li>
+          <li><b>Temple du Ciel</b> (le matin) et <b>Palais d’Été</b> (barque sur le lac Kunming).</li>
+          <li>Balade en <b>vélo-pousse dans les hutongs</b>, parc olympique (Nid d’Oiseau) pour les enfants.</li>
+        </ul>
+        <div class="h-sub">Ma proposition de rythme</div>
+        <ul class="clean">
+          <li>J1 — récupération + Temple du Ciel et quartier de Qianmen (vol du matin).</li>
+          <li>J2 — Cité Interdite + Jingshan + Tian’anmen.</li>
+          <li>J3 — journée Grande Muraille (Mutianyu, départ tôt).</li>
+          <li>J4 matin — Palais d’Été, puis transfert aéroport.</li>
+        </ul>
+        <div class="tip"><span class="ti">💡</span><div>Réservez la Cité Interdite et Mutianyu quelques jours à l’avance : créneaux nominatifs vite complets en été.</div></div>
+      </div>
+    </details>
+
+    <details class="step">
+      <summary class="step-head"><div class="num">2</div>
+        <div class="t"><div class="city">Zhangjiajie</div><div class="when">13 → 18 août · les montagnes « Avatar »</div></div>
+        <div class="nights">5 nuits</div><div class="chev">▾</div></summary>
+      <div class="sb-inner">
+        <div class="hotelbox">
+          <div class="hb"><div class="hbic">🏨</div><div class="hbd"><div class="hbn">Manyuan Resort Hotel</div><div class="hba">Entrance of Wulingyuan Landmark Gate, National Forest Park, district de Wulingyuan, Zhangjiajie, Hunan</div><div class="hbw">13 → 16 août · 3 nuits · réservé au nom de vos amis</div><div class="hbl"><a href="https://maps.apple.com/?q=Manyuan%20Resort%20Hotel%20Wulingyuan%20Zhangjiajie" target="_blank" rel="noopener">🧭 Plans</a><a href="https://uri.amap.com/search?keyword=Manyuan%20Resort%20Hotel%20Wulingyuan%20Zhangjiajie" target="_blank" rel="noopener">📍 Amap</a></div></div></div>
+          <div class="hb"><div class="hbic">🏨</div><div class="hbd"><div class="hbn">Future Home · Aesthetic Homestay (station du téléphérique de Tianmen)</div><div class="hba">À 10 m au nord-est du Meixi Supermarket, Guanliping, district de Yongding, Zhangjiajie, Hunan</div><div class="hbw">16 → 18 août · 2 nuits</div><div class="hbl"><a href="https://maps.apple.com/?q=Future%20Home%20Aesthetic%20Homestay%20Tianmen%20Cableway%20Zhangjiajie" target="_blank" rel="noopener">🧭 Plans</a><a href="https://uri.amap.com/search?keyword=Future%20Home%20Aesthetic%20Homestay%20Tianmen%20Cableway%20Zhangjiajie" target="_blank" rel="noopener">📍 Amap</a></div></div></div>
+        </div>
+        <div class="facts">
+          <div><b>🚄 Suite —</b> 18/08, train ou vol vers Guilin (à réserver)</div>
+        </div>
+        <div class="h-sub">À voir / à faire</div>
+        <ul class="clean">
+          <li><b>Parc national de Wulingyuan</b> — les pitons de grès qui ont inspiré <i>Avatar</i>, l’ascenseur Bailong, le mont Tianzi. Comptez 2 jours, c’est immense.</li>
+          <li><b>Grand Canyon &amp; pont de verre</b> — l’un des plus hauts du monde, sensations garanties pour les ados.</li>
+          <li><b>Montagne Tianmen</b> — téléphérique géant, route aux 99 virages, « Porte du Ciel » et sentiers à sol de verre (votre homestay est au pied).</li>
+        </ul>
+        <div class="h-sub">Ma proposition de rythme</div>
+        <ul class="clean">
+          <li>J1–J2 — Wulingyuan en deux jours (billet multi-jours, navettes incluses).</li>
+          <li>J3 — Grand Canyon + pont de verre.</li>
+          <li>J4 — Tianmen au départ du homestay.</li>
+          <li>J5 — réveil tôt pour le départ vers Guilin.</li>
+        </ul>
+        <div class="tip"><span class="ti">🎒</span><div>Chaussures de marche + ponchos indispensables (brumes et averses fréquentes). Gardez précieusement le billet du parc, valable plusieurs jours.</div></div>
+      </div>
+    </details>
+
+    <details class="step">
+      <summary class="step-head"><div class="num">3</div>
+        <div class="t"><div class="city">Guilin &amp; Yangshuo</div><div class="when">18 → 22 août · rivière Li et karsts</div></div>
+        <div class="nights">4 nuits</div><div class="chev">▾</div></summary>
+      <div class="sb-inner">
+        <div class="hotelbox">
+          <div class="hb"><div class="hbic">🏨</div><div class="hbd"><div class="hbn">Universal International Hotel (Guilin)</div><div class="hba">No. 1 Jiefang East Road, district de Xiufeng, 541001 Guilin, Guangxi</div><div class="hbw">18 → 19 août &amp; 21 → 22 août · 2 nuits</div><div class="hbl"><a href="https://maps.apple.com/?q=Universal%20International%20Hotel%20Jiefang%20East%20Road%20Guilin" target="_blank" rel="noopener">🧭 Plans</a><a href="https://uri.amap.com/search?keyword=Universal%20International%20Hotel%20Jiefang%20East%20Road%20Guilin" target="_blank" rel="noopener">📍 Amap</a></div></div></div>
+          <div class="hb"><div class="hbic">🏨</div><div class="hbd"><div class="hbn">Wude Jiayuan Wellness Resort (Yangshuo)</div><div class="hba">No. 42-1 Qingdi Village, 541900 Yangshuo, Guangxi (rivière Yulong)</div><div class="hbw">19 → 21 août · 2 nuits</div><div class="hbl"><a href="https://maps.apple.com/?q=Wude%20Jiayuan%20Wellness%20Resort%20Yangshuo%20Yulong%20River" target="_blank" rel="noopener">🧭 Plans</a><a href="https://uri.amap.com/search?keyword=Wude%20Jiayuan%20Wellness%20Resort%20Yangshuo%20Yulong%20River" target="_blank" rel="noopener">📍 Amap</a></div></div></div>
+        </div>
+        <div class="facts">
+          <div><b>🚄 Trajets —</b> Guilin ↔ Yangshuo ~1 h 15 ; Guilin → Shenzhen le 22/08 (à réserver)</div>
+        </div>
+        <div class="h-sub">À voir / à faire</div>
+        <ul class="clean">
+          <li><b>Croisière sur la rivière Li</b> de Guilin à Yangshuo — le clou du voyage, les paysages du billet de 20 ¥ (~4–5 h).</li>
+          <li><b>Radeau de bambou sur la rivière Yulong</b>, vélo dans les rizières, village de <b>Xingping</b>, colline en patte de lune.</li>
+          <li>Spectacle nocturne <b>Impression Liu Sanjie</b> (mise en scène de Zhang Yimou sur l’eau).</li>
+          <li>À Guilin : <b>colline de la Trompe d’Éléphant</b>, grotte de la Flûte de Roseau, pagodes Soleil &amp; Lune.</li>
+        </ul>
+        <div class="h-sub">Ma proposition de rythme</div>
+        <ul class="clean">
+          <li>J1 — Guilin : Trompe d’Éléphant, lacs et pagodes.</li>
+          <li>J2 — croisière Li vers Yangshuo, installation.</li>
+          <li>J3 — Yulong en radeau + vélo, spectacle le soir.</li>
+          <li>J4 — retour Guilin, détente / shopping avant le TGV.</li>
+        </ul>
+        <div class="tip"><span class="ti">🧳</span><div>Vous faites Guilin → Yangshuo → Guilin : laissez le gros des bagages à Guilin et partez léger 2 nuits à Yangshuo.</div></div>
+      </div>
+    </details>
+
+    <details class="step">
+      <summary class="step-head"><div class="num">4</div>
+        <div class="t"><div class="city">Shenzhen</div><div class="when">22 → 25 août · la Chine ultra-moderne</div></div>
+        <div class="nights">3 nuits</div><div class="chev">▾</div></summary>
+      <div class="sb-inner">
+        <div class="hotelbox">
+          <div class="hb"><div class="hbic">🏨</div><div class="hbd"><div class="hbn">Kary Apartment</div><div class="hba">Qingfeng Rongsheng Venture Capital Building, No. 88-8 Bagua 3rd Road, Futian, Shenzhen, Guangdong</div><div class="hbw">22 → 25 août · 3 nuits · proche du poste-frontière de Futian</div><div class="hbl"><a href="https://maps.apple.com/?q=Kary%20Apartment%20Bagua%203rd%20Road%20Futian%20Shenzhen" target="_blank" rel="noopener">🧭 Plans</a><a href="https://uri.amap.com/search?keyword=Kary%20Apartment%20Bagua%203rd%20Road%20Futian%20Shenzhen" target="_blank" rel="noopener">📍 Amap</a></div></div></div>
+        </div>
+        <div class="facts">
+          <div><b>🚄 Arrivée —</b> TGV depuis Guilin (~3 h), puis métro</div>
+        </div>
+        <div class="h-sub">À voir / à faire</div>
+        <ul class="clean">
+          <li>Idéal pour <b>souffler</b> après un rythme soutenu. En famille : <b>Window of the World</b>, Splendid China, ou Happy Valley (OCT).</li>
+          <li><b>Huaqiangbei</b>, plus grand marché d’électronique du monde ; quartier créatif OCT-LOFT ; front de mer de la baie de Shenzhen.</li>
+        </ul>
+        <div class="h-sub">Ma proposition de rythme</div>
+        <ul class="clean">
+          <li>J1 — repos + baie de Shenzhen au coucher du soleil.</li>
+          <li>J2 — un parc à thème ou Huaqiangbei selon l’envie.</li>
+          <li>J3 — matinée libre, repérage du trajet vers Hong Kong.</li>
+        </ul>
+        <div class="tip"><span class="ti">💡</span><div>Repérez dès l’arrivée le métro hôtel → <b>Futian Port</b> (lignes 4/10) pour un passage fluide le 25 août.</div></div>
+      </div>
+    </details>
+
+    <details class="step">
+      <summary class="step-head"><div class="num">5</div>
+        <div class="t"><div class="city">Hong Kong</div><div class="when">25 → 27 août · final en beauté</div></div>
+        <div class="nights">2 nuits</div><div class="chev">▾</div></summary>
+      <div class="sb-inner">
+        <div class="hotelbox">
+          <div class="hb"><div class="hbic">🏨</div><div class="hbd"><div class="hbn">The Cityview · Chinese YMCA of Hong Kong</div><div class="hba">23 Waterloo Road, Yau Tsim Mong, Kowloon, Hong Kong</div><div class="hbw">25 → 27 août · 2 nuits</div><div class="hbl"><a href="https://maps.apple.com/?q=The%20Cityview%20Chinese%20YMCA%2023%20Waterloo%20Road%20Kowloon%20Hong%20Kong" target="_blank" rel="noopener">🧭 Plans</a><a href="https://uri.amap.com/search?keyword=The%20Cityview%20Chinese%20YMCA%2023%20Waterloo%20Road%20Kowloon%20Hong%20Kong" target="_blank" rel="noopener">📍 Amap</a></div></div></div>
+        </div>
+        <div class="facts">
+          <div><b>🚇 Passage —</b> 25/08, frontière de Futian (métro Shenzhen → MTR East Rail). Poste ouvert 06:30–22:30</div>
+        </div>
+        <div class="h-sub">À voir / à faire</div>
+        <ul class="clean">
+          <li><b>Pic Victoria</b> (tram à crémaillère), <b>Star Ferry</b> et front de mer de Tsim Sha Tsui, spectacle <b>Symphony of Lights</b> à 20:00.</li>
+          <li>Pour les enfants : <b>Disneyland</b> ou <b>Ocean Park</b> (en choisir un), Ngong Ping 360 + Grand Bouddha de Tian Tan.</li>
+          <li>Marchés animés de <b>Mong Kok</b> et Temple Street, street food de Kowloon.</li>
+        </ul>
+        <div class="h-sub">Ma proposition de rythme</div>
+        <ul class="clean">
+          <li>J1 — un grand parc (Disney <i>ou</i> Ocean Park) toute la journée.</li>
+          <li>J2 — Pic Victoria le matin, baie + Star Ferry, Symphony of Lights au crépuscule.</li>
+        </ul>
+        <div class="tip"><span class="ti">⏰</span><div>Départ le 27/08 à 08:30 : réveil très matinal, transfert vers HKG dès ~05:45. Procurez-vous une carte <b>Octopus</b> dès l’arrivée.</div></div>
+      </div>
+    </details>
+  </section>
+
+  <!-- A RESERVER -->
+  <section id="reserver">
+    <div class="sec-title"><span class="dot"></span><h2>À réserver soi-même</h2></div>
+    <div class="book">
+      <div class="row"><div class="d">18 août</div><div class="m"><div class="tr">Zhangjiajie → Guilin</div><div class="su">Train direct D3967 ~7 h (07:17) ou vol ~1 h</div></div><span class="badge b-amber">dès ~3 août</span></div>
+      <div class="row"><div class="d">22 août</div><div class="m"><div class="tr">Guilin → Shenzhen Nord</div><div class="su">TGV ~2 h 40–3 h 30 · ~17 trains/jour</div></div><span class="badge b-amber">dès ~7 août</span></div>
+      <div class="row"><div class="d">25 août</div><div class="m"><div class="tr">Shenzhen Futian → Hong Kong</div><div class="su">Métro + MTR, passage frontière 30–45 min</div></div><span class="badge b-grey">sur place</span></div>
+    </div>
+    <div class="tip" style="margin-top:11px"><span class="ti">🎫</span><div>Le 18 août est le point sensible : un seul train direct, tôt le matin. <b>Pré-réservez via Trip.com</b> dès que possible, ou comparez un vol DYG→KWL.</div></div>
+  </section>
+
+  <!-- VIGILANCE -->
+  <section id="vigilance">
+    <div class="sec-title"><span class="dot"></span><h2>4 points à ne pas oublier</h2></div>
+    <div class="alert"><h4>📍 « Kary Apartment » = Shenzhen, pas Guilin</h4><p>Votre logement du 22–25 août est à Shenzhen (quartier Futian), juste à la frontière de Hong Kong. Le parcours réel est Guilin → Shenzhen → Hong Kong.</p></div>
+    <div class="alert"><h4>🛫 Aéroport de Pékin = Daxing (PKX)</h4><p>Arrivée et départ vers Zhangjiajie côté Daxing (sud de Pékin), pas Capital (PEK). Votre hôtel (Three Cats Homestay) est à Chaoyang / Sanlitun, au centre : comptez ~1 h à 1 h 30 de transfert vers Daxing le 13/08.</p></div>
+    <div class="alert"><h4>🎫 Trains : ventes ouvertes 15 jours avant</h4><p>Pas 3 mois. Vous réserverez depuis votre téléphone une fois sur place (ou en pré-réservation via Trip.com), surtout pour le 18 août.</p></div>
+    <div class="alert"><h4>⏱️ Correspondance retour serrée à Pékin</h4><p>Le 27 août, 1 h 30 seulement entre Hong Kong→Pékin (12:00) et Pékin→Paris (13:30), avec ré-entrée en Chine. À confirmer avec Air China ; bagages enregistrés jusqu’à Paris.</p></div>
+  </section>
+
+  <!-- PRATIQUE -->
+  <section id="pratique">
+    <div class="sec-title"><span class="dot"></span><h2>Conseils pratiques &amp; préparation</h2></div>
+
+    <div class="pcard">
+      <h3>📲 Applis à installer AVANT de partir</h3>
+      <p class="hint" style="margin:0 0 6px">En Chine, Google / WhatsApp / Instagram sont bloqués et les stores peuvent être inaccessibles : installez et testez tout depuis la France.</p>
+      <div class="apps">
+        <div class="app"><div class="ai">🗺️</div><div class="ad"><div class="an">Amap (Gaode Maps)</div><div class="ar">Navigation, métro, bus — mode anglais. La référence, à la place de Google Maps. (Apple Plans fonctionne aussi en Chine.)</div></div><span class="at t-must">indispensable</span></div>
+        <div class="app"><div class="ai">🗣️</div><div class="ad"><div class="an">Microsoft Translator</div><div class="ar">Traduction voix &amp; texte, hors-ligne, <b>non bloquée</b> en Chine. Téléchargez le pack chinois avant.</div></div><span class="at t-must">indispensable</span></div>
+        <div class="app"><div class="ai">📷</div><div class="ad"><div class="an">Baidu Translate</div><div class="ar">Meilleure traduction <b>photo</b> des menus et panneaux — marche sans VPN.</div></div><span class="at t-must">utile</span></div>
+        <div class="app"><div class="ai">📖</div><div class="ad"><div class="an">Pleco</div><div class="ar">Dictionnaire chinois-anglais de référence, hors-ligne.</div></div><span class="at t-must">utile</span></div>
+        <div class="app"><div class="ai">🚗</div><div class="ad"><div class="an">DiDi</div><div class="ar">Le « Uber » chinois : destination en anglais, paiement Alipay, traduction chauffeur intégrée.</div></div><span class="at t-must">indispensable</span></div>
+        <div class="app"><div class="ai">💳</div><div class="ad"><div class="an">Alipay + WeChat</div><div class="ar">Paiement partout + mini-programmes (métro, DiDi, traduction). Liez une carte Visa/Mastercard.</div></div><span class="at t-before">à configurer</span></div>
+        <div class="app"><div class="ai">🧳</div><div class="ad"><div class="an">Trip.com</div><div class="ar">Vols, <b>trains (12306)</b> et hôtels en anglais — pour réserver vos trajets sur place.</div></div><span class="at t-before">à configurer</span></div>
+        <div class="app"><div class="ai">🔐</div><div class="ad"><div class="an">VPN</div><div class="ar">À installer et tester <b>avant</b> (impossible à télécharger sur place) pour garder Google, WhatsApp, mails.</div></div><span class="at t-before">avant départ</span></div>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <h3>🧳 Avant le départ — à préparer</h3>
+      <ul class="clean">
+        <li><b>Passeports (4)</b> valables 6 mois après l’entrée + <b>photocopies</b> (papier et photo dans le téléphone).</li>
+        <li><b>Carte d’arrivée en ligne</b> à remplir dans les 72 h avant l’entrée → <a href="https://s.nia.gov.cn">s.nia.gov.cn</a> (génère un QR code). Sans visa pour les Français (séjour ≤ 30 j).</li>
+        <li><b>Paiement mobile</b> : créez et vérifiez Alipay/WeChat, liez une carte. Prévoyez un peu de <b>cash en yuan</b> en secours.</li>
+        <li><b>eSIM « voyage Chine »</b> avec itinérance (contourne souvent le pare-feu) ou forfait international — pour 4 téléphones.</li>
+        <li><b>Assurance voyage</b> (santé + annulation) recommandée.</li>
+        <li><b>Adresses des hôtels en chinois</b> : enregistrez-les en caractères (à montrer aux chauffeurs / pour DiDi).</li>
+        <li><b>Réservations de sites</b> à anticiper : Cité Interdite, Grande Muraille (Mutianyu), Tianmen — nominatives avec passeport.</li>
+        <li>Téléchargez <b>hors-ligne</b> : cartes Amap, pack de traduction, captures des réservations + QR codes.</li>
+      </ul>
+    </div>
+
+    <div class="pcard">
+      <h3>🎒 Vêtements &amp; sac à dos (objectif 40 L)</h3>
+      <p class="hint" style="margin:0 0 8px">Stratégie : voyager léger en sac à dos 40 L (format cabine) et faire une lessive tous les 3–4 jours à l'hôtel pour rester mobiles. Privilégiez les matières techniques ou mérinos à séchage rapide.</p>
+      <div class="h-sub" style="color:var(--blue)">Garde-robe par personne</div>
+      <ul class="clean">
+        <li>3–4 t-shirts / tops respirants (séchage rapide)</li>
+        <li>1–2 hauts légers à manches longues (soleil, moustiques, temples)</li>
+        <li>2 shorts + 1 pantalon léger ; 1 legging ou pantalon de rando (épaules &amp; genoux couverts sur certains sites)</li>
+        <li>4–5 sous-vêtements + 4–5 paires de chaussettes (séchage rapide)</li>
+        <li>1 polaire fine ou pull léger (clim, montagnes de Zhangjiajie)</li>
+        <li>1 veste imperméable légère / coupe-vent + poncho de pluie compact</li>
+        <li>Maillot de bain (piscines des hôtels), 1 tenue « propre » pour les sorties, pyjama léger</li>
+        <li>Chapeau/casquette, lunettes de soleil ; 1 paire de chaussures de marche + 1 sandales/tongs</li>
+      </ul>
+      <div class="h-sub" style="color:var(--blue)">Lessive sur place</div>
+      <ul class="clean">
+        <li>Lessive solide ou en feuilles (compacte, OK en cabine) — éviter les liquides &gt; 100 ml</li>
+        <li>Corde à linge élastique + quelques pinces, bouchon d'évier universel, sac étanche pour le linge sale</li>
+        <li>Lavage à la main le soir ; les matières techniques sèchent dans la nuit avec la clim</li>
+      </ul>
+      <div class="two">
+        <div class="mini"><div class="ml">🎒 Optimiser 40 L</div><div class="mv">Sacs de compression, vêtements roulés, trousse minimaliste (flacons &lt; 100 ml).</div></div>
+        <div class="mini"><div class="ml">🧺 Rythme lessive</div><div class="mv">Une lessive tous les 3–4 jours : ~4–5 tenues suffisent pour 17 jours.</div></div>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <h3>📍 Sur place — bons réflexes</h3>
+      <ul class="clean">
+        <li><b>Traduction</b> : Microsoft Translator pour parler, Baidu (photo) pour les menus, Pleco pour un mot précis.</li>
+        <li><b>Se déplacer</b> : Amap pour le métro/bus, DiDi pour un taxi. Montrez l’adresse en chinois en cas de doute.</li>
+        <li><b>Payer</b> : tout par QR code (Alipay/WeChat). Beaucoup de commerces n’acceptent <b>pas</b> les espèces facilement — gardez le téléphone chargé (batterie externe).</li>
+        <li><b>Eau</b> : pas d’eau du robinet — eau en bouteille ou bouilloire de l’hôtel.</li>
+        <li><b>Pourboire</b> : pas d’usage en Chine continentale ni à Hong Kong.</li>
+        <li><b>Santé</b> : pharmacies nombreuses ; gardez une petite trousse (anti-moustiques, solaire, anti-diarrhéique).</li>
+        <li><b>Politesse</b> : un « Nǐ hǎo » (bonjour) et « Xièxie » (merci) sont toujours appréciés.</li>
+      </ul>
+      <div class="two">
+        <div class="mini"><div class="ml">🔌 Prises</div><div class="mv">Chine : types A/C/I, 220 V.<br>Hong Kong : <b>type G (UK)</b> — adaptateur différent !</div></div>
+        <div class="mini"><div class="ml">🕗 Décalage</div><div class="mv">Chine &amp; HK : UTC+8<br>= France <b>+6 h</b> (été)</div></div>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <h3>🆘 Numéros utiles &amp; secours</h3>
+      <div class="sos">
+        <div class="s"><div class="n">110</div><div class="c">Police (Chine)</div></div>
+        <div class="s"><div class="n">120</div><div class="c">Ambulance (Chine)</div></div>
+        <div class="s"><div class="n">119</div><div class="c">Pompiers (Chine)</div></div>
+        <div class="s"><div class="n">999</div><div class="c">Urgences (Hong Kong)</div></div>
+        <div class="s"><div class="n">12301</div><div class="c">Hotline tourisme</div></div>
+        <div class="s"><div class="n">+33 1 43 17 53 53</div><div class="c">Urgence Français à l’étranger (MAE)</div></div>
+      </div>
+      <p class="hint" style="margin:10px 0 0">Notez aussi les coordonnées de l’ambassade de France à Pékin et du consulat à Hong Kong avant de partir.</p>
+    </div>
+  </section>
+
+  <!-- CHECKLIST -->
+  <section id="checklist">
+    <div class="sec-title"><span class="dot"></span><h2>Check-list</h2></div>
+    <div class="check">
+      <div class="grp">Avant le départ</div>
+      <label><input type="checkbox"><span>Passeports (4) valables 6 mois + photocopies</span><span class="due">8/08</span></label>
+      <label><input type="checkbox"><span>Carte d’arrivée en ligne (s.nia.gov.cn)</span><span class="due">≤ 72 h</span></label>
+      <label><input type="checkbox"><span>Alipay / WeChat Pay + carte liée</span></label>
+      <label><input type="checkbox"><span>VPN installé et testé</span></label>
+      <label><input type="checkbox"><span>eSIM voyage Chine activée</span></label>
+      <label><input type="checkbox"><span>Assurance voyage souscrite</span></label>
+      <label><input type="checkbox"><span>Captures des réservations + QR codes hors-ligne</span></label>
+      <label><input type="checkbox"><span>Horaires des vols modifiés vérifiés (Trip.com)</span></label>
+      <label><input type="checkbox"><span>Réserver Cité Interdite + Mutianyu (passeports)</span></label>
+      <div class="grp">Sur place</div>
+      <label><input type="checkbox"><span>Train Zhangjiajie → Guilin (ou vol)</span><span class="due">~3/08</span></label>
+      <label><input type="checkbox"><span>TGV Guilin → Shenzhen</span><span class="due">~7/08</span></label>
+      <label><input type="checkbox"><span>Billets parc Zhangjiajie / créneaux Tianmen</span></label>
+      <label><input type="checkbox"><span>Croisière rivière Li</span></label>
+      <label><input type="checkbox"><span>Repérer métro hôtel → Futian Port</span></label>
+      <label><input type="checkbox"><span>Carte Octopus à Hong Kong</span></label>
+      <label><input type="checkbox"><span>Réserver Disneyland ou Ocean Park</span></label>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-cn">旅途愉快 — Bon voyage !</div>
+    Carnet de voyage Chine &amp; Hong Kong · 8–27 août 2026 · En famille<br>
+    Page autonome, lisible hors-ligne. Vérifiez les horaires et formalités avant le départ.
+  </footer>
+
+</div>
+</body>
+</html>
