@@ -14,7 +14,8 @@
     --r:18px;
   }
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;scroll-padding-top:62px}
+  section[id]{scroll-margin-top:62px}
   body{margin:0;background:var(--bg);color:var(--ink);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     line-height:1.55;-webkit-font-smoothing:antialiased;}
@@ -158,7 +159,7 @@
   .sched-day .sd-title{font-weight:800;font-size:13px;color:var(--navy);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--line)}
   .sched-row{display:flex;gap:8px;align-items:flex-start;padding:5px 0;border-top:1px solid #eef1f5}
   .sched-row:first-of-type{border-top:0;padding-top:2px}
-  .sched-time{flex:0 0 48px;font-size:11px;font-weight:800;color:var(--blue);white-space:nowrap;padding-top:2px}
+  .sched-time{flex:0 0 54px;font-size:11px;font-weight:800;color:var(--blue);white-space:nowrap;padding-top:2px}
   .sched-act{flex:1;font-size:13px;line-height:1.45;color:var(--ink)}
 
   .transport-row:first-of-type{border-top:0;padding-top:2px}
@@ -193,11 +194,6 @@
     .sched-day .sd-title::after{display:none}
   }
 
-  /* Decathlon table responsive */
-  @media(max-width:400px){
-    .deca-table{font-size:11.5px}
-    .deca-table th,.deca-table td{padding:6px 4px}
-  }
   footer{text-align:center;color:var(--muted);font-size:12.5px;margin-top:30px;padding-top:18px;border-top:1px solid var(--line)}
   .foot-cn{font-size:15px;color:var(--navy);font-weight:700;margin-bottom:4px}
 
@@ -215,19 +211,49 @@
     <div class="meta">
       <span class="chip">🗓️ 8 – 27 août 2026</span>
       <span class="chip">👨‍👩‍👧‍👦 2 adultes + 2 enfants</span>
-      <span class="chip">🌙 ≈ 17 jours</span>
+      <span class="chip">🌙 18 nuits sur place</span>
     </div>
   </header>
 
   <nav><div class="nav-inner">
+    <a href="#urgent" style="background:#fff1ee;border-color:#f6d6cd;color:#c0432c">⚠️ Urgent</a>
     <a href="#essentiel">Essentiel</a>
     <a href="#carte">Carte</a>
     <a href="#etapes">Étapes</a>
     <a href="#reserver">À réserver</a>
+    <a href="#resas">Réservations</a>
     <a href="#vigilance">Vigilance</a>
     <a href="#pratique">Pratique</a>
     <a href="#checklist">Check-list</a>
   </div></nav>
+
+
+  <!-- URGENT -->
+  <section id="urgent">
+    <div class="sec-title"><span class="dot" style="background:var(--rose)"></span><h2>⚠️ À traiter avant le départ</h2></div>
+    <p class="hint">Vérifié le 5 août 2026 sur vos réservations Trip.com.</p>
+    <div class="alert" style="border-left-color:var(--rose)">
+      <h4>🚨 Les deux trains ne sont toujours pas réservés</h4>
+      <p><b>Zhangjiajie → Guilin (18/08)</b> et <b>Guilin → Shenzhen (22/08)</b>. Les ventes chinoises ouvrent à 15 jours : <b>c'est ouvert maintenant pour les deux</b>. Le 18/08 est le point critique — un seul train direct, tôt le matin.
+      <a href="https://www.trip.com/trains/china/" target="_blank" rel="noopener">Réserver sur Trip.com ↗</a></p>
+    </div>
+    <div class="alert" style="border-left-color:var(--rose)">
+      <h4>✈️ Correspondance de 50 min à Casablanca — avec changement de terminal</h4>
+      <p>Royal Air Maroc a <b>avancé l'AT230 de 20 minutes</b>. Vous arrivez au <b>T2</b> à 15:15 et repartez du <b>T1</b> à 16:05. Trip.com signale lui-même un « temps de correspondance court ». Les bagages sont enregistrés jusqu'à Pékin, mais prévoyez : sièges à l'avant, descente rapide, et repérage de la navette inter-terminaux.</p>
+    </div>
+    <div class="alert">
+      <h4>🕖 Wulingyuan : entrée à créneau imposé le 14/08</h4>
+      <p>Votre billet 4 jours impose une entrée <b>entre 07:00 et 08:00</b>, <b>porte Est, ligne B</b> (direction ascenseur Bailong / galerie des Dix Miles). Lever vers 06:15. L'<b>ascenseur de Bailong</b> est réservé pour le <b>14/08 uniquement</b>.</p>
+    </div>
+    <div class="alert" style="border-left-color:var(--rose)">
+      <h4>👥 Deux billets ne couvrent pas toute la famille</h4>
+      <p>L'<b>ascenseur de Bailong (14/08)</b> n'a que <b>2 billets</b> — Mathieu et Sandrine. La <b>montagne Tianmen (16/08)</b> n'en a que <b>3</b> — Manon n'y figure pas. Vérifiez si les compléments s'achètent sur place, ou ajoutez-les avant de partir.</p>
+    </div>
+    <div class="alert">
+      <h4>🎟️ La croisière reste à réserver</h4>
+      <p>La <b>croisière sur la rivière Li</b> du 19/08 n'est pas réservée. Le parc de Shenzhen (23/08) tombe un <b>dimanche</b> — jour le plus chargé de la semaine.</p>
+    </div>
+  </section>
 
   <!-- ESSENTIEL -->
   <section id="essentiel">
@@ -424,7 +450,8 @@
           <div class="hb"><div class="hbic">🏨</div><div class="hbd"><div class="hbn">Three Cats Homestay (Sanlitun · Gongti)</div><div class="hba">Unit 2, Yongli International, No. 21 Gongren Tiyuchang North Road, Chaoyang, Pékin</div><div class="hbw">9 → 13 août · 4 nuits · arrivée après 14:00</div><div class="hbl"><a href="https://maps.apple.com/?q=Three%20Cats%20Homestay%2021%20Gongren%20Tiyuchang%20North%20Road%20Chaoyang%20Beijing" target="_blank" rel="noopener">🧭 Plans</a><a href="https://uri.amap.com/search?keyword=Three%20Cats%20Homestay%2021%20Gongren%20Tiyuchang%20North%20Road%20Chaoyang%20Beijing" target="_blank" rel="noopener">📍 Amap</a></div></div></div>
         </div>
         <div class="facts">
-          <div><b>🛫 Transport —</b> arrivée 9/08 à PKX ; départ 13/08 vol 14:00 vers Zhangjiajie</div>
+          <div><b>🛫 Arrivée —</b> 9/08, vol <b>AT230</b> Royal Air Maroc, Casablanca T1 16:05 → <b>Pékin Daxing (PKX)</b> 11:25</div>
+          <div><b>🛫 Départ —</b> 13/08, vol <b>CA8609</b> Air China, PKX 14:00 → Zhangjiajie DYG 16:30</div>
 
         <details class="transport-box">
           <summary class="transport-summary">🚕 Transport : PKX → Three Cats Homestay (Sanlitun, Chaoyang)</summary>
@@ -454,7 +481,7 @@
         <div class="h-sub">Programme jour par jour</div>
         <div class="sched">
           <div class="sched-day">
-            <div class="sd-title">J1 · Mardi 9/08 — Arrivée &amp; découverte</div>
+            <div class="sd-title">J1 · Dimanche 9/08 — Arrivée &amp; découverte</div>
             <div class="sd-body">
             <div class="sched-row"><span class="sched-time">11 h 25</span><span class="sched-act">Arrivée PKX · bagages · transfert hôtel (~1 h 15 en taxi/DiDi)</span></div>
             <div class="sched-row"><span class="sched-time">14 h 00</span><span class="sched-act"><b>Temple du Ciel</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Temple+of+Heaven+Beijing" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Temple+of+Heaven+Beijing" target="_blank" rel="noopener">📍</a></span> — hall de la Prière, allée des Cyprès, ~2 h</span></div>
@@ -463,39 +490,42 @@
           </div>
           </div>
           <div class="sched-day">
-            <div class="sd-title">J2 · Mercredi 10/08 — Cité Interdite &amp; hutongs</div>
+            <div class="sd-title">J2 · Lundi 10/08 — 🧱 Grande Muraille de Mutianyu</div>
             <div class="sd-body">
-            <div class="sched-row"><span class="sched-time">08 h 00</span><span class="sched-act">Départ · petite dej · metro ligne 1</span></div>
-            <div class="sched-row"><span class="sched-time">08 h 30</span><span class="sched-act"><b>Place Tian'anmen</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Tiananmen+Square+Beijing" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Tiananmen+Square+Beijing" target="_blank" rel="noopener">📍</a></span> · entrée <b>Cité Interdite</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Forbidden+City+Beijing" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Forbidden+City+Beijing" target="_blank" rel="noopener">📍</a></span> — billet online obligatoire, ~3 h 30</span></div>
-            <div class="sched-row"><span class="sched-time">12 h 30</span><span class="sched-act">Déjeuner porte Nord · Starbucks Forbidden City ou resto local</span></div>
+            <div class="sched-row"><span class="sched-time">Réservé</span><span class="sched-act"><b>Excursion d'une journée à Mutianyu</b> — formule B : transport aller-retour, guide, entrée, téléphérique et toboggan · 4 adultes <span style="font-size:11px;font-weight:800;color:#0a7a55;background:#e2f3ec;border-radius:999px;padding:2px 7px;white-space:nowrap">✅ réservé</span></span></div>
+            <div class="sched-row"><span class="sched-time">07 h 10</span><span class="sched-act">Départ de l'hôtel · métro vers <b>Dongsi</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Dongsi+Station+Beijing" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Dongsi+Station+Beijing" target="_blank" rel="noopener">📍</a></span> (~20 min depuis Sanlitun) · prenez le petit-déjeuner avant, rien n'est inclus</span></div>
+            <div class="sched-row"><span class="sched-time">08 h 00</span><span class="sched-act">📍 <b>Rendez-vous : devant le McDonald's, sortie B du métro Dongsi</b> — départ en groupe vers Mutianyu (~1 h 30). Ne soyez pas en retard, le car ne vous attendra pas.</span></div>
+            <div class="sched-row"><span class="sched-time">10 h 00</span><span class="sched-act"><b>Grande Muraille à Mutianyu</b> — télécabine ↑, marche sur les remparts (tours 6→14, ~3 km), <b>toboggan ↓</b></span></div>
+            <div class="sched-row"><span class="sched-time">13 h 00</span><span class="sched-act">Déjeuner au village — <b>non inclus dans l'excursion</b>, prévoyez du liquide ou Alipay</span></div>
+            <div class="sched-row"><span class="sched-time">17 h 00</span><span class="sched-act">Retour Pékin · <b>Parc olympique</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Olympic+Park+Beijing" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Olympic+Park+Beijing" target="_blank" rel="noopener">📍</a></span> (Nid d'Oiseau + Cube d'Eau, vue extérieure) si l'excursion se termine tôt</span></div>
+            <div class="sched-row"><span class="sched-time">19 h 00</span><span class="sched-act">Dîner canard laqué · retour hôtel</span></div>
+          </div>
+          </div>
+          <div class="sched-day">
+            <div class="sd-title">J3 · Mardi 11/08 — Cité Interdite &amp; hutongs</div>
+            <div class="sd-body">
+            <div class="sched-row"><span class="sched-time">08 h 00</span><span class="sched-act">Départ · petit-déjeuner · métro ligne 1</span></div>
+            <div class="sched-row"><span class="sched-time">08 h 30</span><span class="sched-act"><b>Place Tian'anmen</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Tiananmen+Square+Beijing" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Tiananmen+Square+Beijing" target="_blank" rel="noopener">📍</a></span> · entrée <b>Cité Interdite</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Forbidden+City+Beijing" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Forbidden+City+Beijing" target="_blank" rel="noopener">📍</a></span> — <b>billet nominatif en ligne obligatoire</b>, ~3 h 30</span></div>
+            <div class="sched-row"><span class="sched-time">12 h 30</span><span class="sched-act">Déjeuner porte Nord · resto local</span></div>
             <div class="sched-row"><span class="sched-time">13 h 30</span><span class="sched-act"><b>Colline de Jingshan</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Jingshan+Park+Beijing" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Jingshan+Park+Beijing" target="_blank" rel="noopener">📍</a></span> — panorama sur la Cité Interdite, ~1 h</span></div>
             <div class="sched-row"><span class="sched-time">15 h 00</span><span class="sched-act"><b>Hutongs &amp; lac Houhai</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Houhai+Lake+Beijing" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Houhai+Beijing" target="_blank" rel="noopener">📍</a></span> — balade à pied ou vélo-pousse, ~2 h</span></div>
             <div class="sched-row"><span class="sched-time">19 h 00</span><span class="sched-act">Dîner au bord du lac Houhai</span></div>
           </div>
           </div>
           <div class="sched-day">
-            <div class="sd-title">J3 · Jeudi 11/08 — 🎢 Universal Beijing Resort</div>
+            <div class="sd-title">J4 · Mercredi 12/08 — 🎢 Universal Beijing Resort</div>
             <div class="sd-body">
-            <div class="sched-row"><span class="sched-time">07 h 30</span><span class="sched-act">Départ hôtel · métro ligne 7 direction « Universal Resort » (~45 min) <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Universal+Beijing+Resort" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Universal+Beijing+Resort" target="_blank" rel="noopener">📍</a></span></span></div>
-            <div class="sched-row"><span class="sched-time">09 h 00</span><span class="sched-act"><b>Ouverture</b> — filer direct vers <b>The Wizarding World of Harry Potter</b> (files courtes à l'ouverture)</span></div>
-            <div class="sched-row"><span class="sched-time">10 h 30</span><span class="sched-act"><b>Kung Fu Panda</b> · <b>Minions</b> · <b>Transformers</b></span></div>
+            <div class="sched-row"><span class="sched-time">Réservé</span><span class="sched-act"><b>Billets journée datée</b> — 3 personnes + 1 enfant · <b>parc ouvert 10:00 → 19:00</b> · passeports originaux obligatoires à l'entrée <span style="font-size:11px;font-weight:800;color:#0a7a55;background:#e2f3ec;border-radius:999px;padding:2px 7px;white-space:nowrap">✅ réservé</span></span></div>
+            <div class="sched-row"><span class="sched-time">08 h 45</span><span class="sched-act">Départ hôtel · métro ligne 7 direction « Universal Resort », district de Tongzhou (~45 min) <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Universal+Beijing+Resort" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Universal+Beijing+Resort" target="_blank" rel="noopener">📍</a></span></span></div>
+            <div class="sched-row"><span class="sched-time">10 h 00</span><span class="sched-act"><b>Ouverture du parc</b> — filer direct vers <b>The Wizarding World of Harry Potter</b> (files courtes à l'ouverture)</span></div>
+            <div class="sched-row"><span class="sched-time">11 h 30</span><span class="sched-act"><b>Kung Fu Panda</b> · <b>Minions</b> · <b>Transformers</b></span></div>
             <div class="sched-row"><span class="sched-time">12 h 30</span><span class="sched-act">Déjeuner dans le parc (Three Broomsticks / Fast Food)</span></div>
             <div class="sched-row"><span class="sched-time">14 h 00</span><span class="sched-act"><b>Jurassic World</b> · <b>Hollywood</b> · parades &amp; spectacles de fin d'après-midi</span></div>
-            <div class="sched-row"><span class="sched-time">18 h 30</span><span class="sched-act">Retour hôtel · dîner libre</span></div>
+            <div class="sched-row"><span class="sched-time">19 h 00</span><span class="sched-act">Fermeture du parc · retour hôtel · <b>préparation des bagages</b> (vol demain 14 h 00)</span></div>
           </div>
           </div>
           <div class="sched-day">
-            <div class="sd-title">J4 · Vendredi 12/08 — Grande Muraille</div>
-            <div class="sd-body">
-            <div class="sched-row"><span class="sched-time">06 h 30</span><span class="sched-act">Départ tôt · navette ou DiDi vers Mutianyu <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Mutianyu+Great+Wall+Beijing" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Mutianyu+Great+Wall" target="_blank" rel="noopener">📍</a></span> (~1 h 30)</span></div>
-            <div class="sched-row"><span class="sched-time">08 h 15</span><span class="sched-act"><b>Grande Muraille à Mutianyu</b> — télécabine ↑, marche sur les remparts (tours 6→14, ~3 km), toboggan ↓</span></div>
-            <div class="sched-row"><span class="sched-time">12 h 00</span><span class="sched-act">Déjeuner au village · repos</span></div>
-            <div class="sched-row"><span class="sched-time">14 h 00</span><span class="sched-act">Retour Pékin · <b>Parc olympique</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Olympic+Park+Beijing" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Olympic+Park+Beijing" target="_blank" rel="noopener">📍</a></span> (Nid d'Oiseau + Cube d'Eau, vue extérieure)</span></div>
-            <div class="sched-row"><span class="sched-time">17 h 30</span><span class="sched-act">Retour hôtel · préparation des bagages</span></div>
-          </div>
-          </div>
-          <div class="sched-day">
-            <div class="sd-title">13/08 matin — Palais d'Été &amp; départ</div>
+            <div class="sd-title">J5 · Jeudi 13/08 — Palais d'Été &amp; départ</div>
             <div class="sd-body">
             <div class="sched-row"><span class="sched-time">07 h 00</span><span class="sched-act"><b>Palais d'Été</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Summer+Palace+Beijing" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Summer+Palace+Beijing" target="_blank" rel="noopener">📍</a></span> — barque sur le lac Kunming, galerie longue, ~2 h</span></div>
             <div class="sched-row"><span class="sched-time">09 h 30</span><span class="sched-act">Retour hôtel · checkout · DiDi vers PKX (~1 h 15)</span></div>
@@ -503,7 +533,7 @@
           </div>
           </div>
         </div>
-        <div class="tip"><span class="ti">💡</span><div>Réservez Cité Interdite, Mutianyu et Universal Beijing en avance — créneaux nominatifs vite complets en été.</div></div>
+        <div class="tip"><span class="ti">✅</span><div><b>Mutianyu (10/08) et Universal (12/08) sont réservés.</b> Reste la <b>Cité Interdite du 11/08</b> : billet nominatif en ligne avec passeport, à prendre au plus vite. Le musée du Palais ferme habituellement le <b>lundi</b> — le 11/08 étant un mardi, c'est le bon jour ; vérifiez tout de même le calendrier officiel.</div></div>
         <div class="tip"><span class="ti">🎟️</span><div><b>Universal Beijing Resort</b> — adulte ≈ 398–598 ¥<span style="color:var(--muted);font-size:0.88em;font-style:italic"> (≈ 50–80 €)</span> · enfant (≤ 1,40 m) ≈ 298–448 ¥<span style="color:var(--muted);font-size:0.88em;font-style:italic"> (≈ 40–60 €)</span>. <a href="https://www.klook.com/search/?query=Universal%20Beijing%20Resort" target="_blank" rel="noopener">Klook ↗</a> · <a href="https://www.universalbeijingresort.com" target="_blank" rel="noopener">Site officiel ↗</a></div></div>
       </div>
     </details>
@@ -518,7 +548,8 @@
           <div class="hb"><div class="hbic">🏨</div><div class="hbd"><div class="hbn">Future Home · Aesthetic Homestay (station du téléphérique de Tianmen)</div><div class="hba">À 10 m au nord-est du Meixi Supermarket, Guanliping, district de Yongding, Zhangjiajie, Hunan</div><div class="hbw">16 → 18 août · 2 nuits</div><div class="hbl"><a href="https://maps.apple.com/?q=Future%20Home%20Aesthetic%20Homestay%20Tianmen%20Cableway%20Zhangjiajie" target="_blank" rel="noopener">🧭 Plans</a><a href="https://uri.amap.com/search?keyword=Future%20Home%20Aesthetic%20Homestay%20Tianmen%20Cableway%20Zhangjiajie" target="_blank" rel="noopener">📍 Amap</a></div></div></div>
         </div>
         <div class="facts">
-          <div><b>🚄 Suite —</b> 18/08, train ou vol vers Guilin (à réserver)</div>
+          <div><b>🎟️ Billets —</b> parc de Wulingyuan valable <b>14 → 17 août</b> (4 jours, bus écologique inclus) · Bailong le 14/08 · Tianmen le 16/08</div>
+          <div><b>🚄 Suite —</b> 18/08, train ou vol vers Guilin — <b>⚠️ non réservé</b></div>
 
         <details class="transport-box">
           <summary class="transport-summary">🚕 Transport : Aéroport DYG ou gare → Manyuan Resort (Wulingyuan)</summary>
@@ -549,39 +580,59 @@
         <div class="h-sub">Programme jour par jour</div>
         <div class="sched">
           <div class="sched-day">
-            <div class="sd-title">J1–J2 · 13–14/08 — Parc de Wulingyuan</div>
+            <div class="sd-title">J1 · Jeudi 13/08 — Arrivée à Zhangjiajie</div>
             <div class="sd-body">
-            <div class="sched-row"><span class="sched-time">09 h 00</span><span class="sched-act"><b>Entrée Wulingyuan</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Wulingyuan+Scenic+Area+Zhangjiajie" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Wulingyuan+Zhangjiajie" target="_blank" rel="noopener">📍</a></span> · billet multi-jours · navettes incluses</span></div>
-            <div class="sched-row"><span class="sched-time">09 h 30</span><span class="sched-act"><b>Zone Yuanjiajie</b> — les pitons Avatar, pont entre Ciel et Terre · téléphérique Bailong <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Bailong+Elevator+Zhangjiajie" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Bailong+Elevator+Zhangjiajie" target="_blank" rel="noopener">📍</a></span> (ascenseur le plus haut du monde, ~1 min 28 s)</span></div>
-            <div class="sched-row"><span class="sched-time">13 h 00</span><span class="sched-act">Déjeuner dans le parc (restaurants navette)</span></div>
-            <div class="sched-row"><span class="sched-time">14 h 30</span><span class="sched-act"><b>Zone Tianzi Mountain</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Tianzi+Mountain+Zhangjiajie" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Tianzi+Mountain+Zhangjiajie" target="_blank" rel="noopener">📍</a></span> — mont Tianzi, mer de nuages en fin de journée</span></div>
-            <div class="sched-row"><span class="sched-time">17 h 30</span><span class="sched-act">Retour hôtel Manyuan · dîner · repos (beaucoup de marche !)</span></div>
+            <div class="sched-row"><span class="sched-time">14 h 00</span><span class="sched-act">Vol <b>CA8609</b> Pékin PKX → Zhangjiajie DYG <span style="font-size:11px;font-weight:800;color:#0a7a55;background:#e2f3ec;border-radius:999px;padding:2px 7px;white-space:nowrap">✅ réservé</span></span></div>
+            <div class="sched-row"><span class="sched-time">16 h 30</span><span class="sched-act">Arrivée <b>DYG (Hehua, T2)</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Zhangjiajie+Hehua+Airport" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Zhangjiajie+Airport" target="_blank" rel="noopener">📍</a></span> · DiDi vers Wulingyuan (~30 min, ≈ 50–70 ¥)</span></div>
+            <div class="sched-row"><span class="sched-time">17 h 30</span><span class="sched-act">Check-in <b>Manyuan Resort Hotel</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Manyuan+Resort+Hotel+Wulingyuan+Zhangjiajie" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Manyuan+Resort+Hotel+Wulingyuan" target="_blank" rel="noopener">📍</a></span> · dîner · <b>couchez-vous tôt</b> : lever 05 h 45 demain</span></div>
           </div>
           </div>
           <div class="sched-day">
-            <div class="sd-title">J3 · 15/08 — Grand Canyon &amp; pont de verre</div>
+            <div class="sd-title">J2 · Vendredi 14/08 — Wulingyuan : Yuanjiajie &amp; Tianzi</div>
             <div class="sd-body">
-            <div class="sched-row"><span class="sched-time">08 h 30</span><span class="sched-act"><b>Grand Canyon de Zhangjiajie</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Zhangjiajie+Grand+Canyon" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Zhangjiajie+Grand+Canyon" target="_blank" rel="noopener">📍</a></span> — descente dans les gorges, passerelles, ~3 h</span></div>
-            <div class="sched-row"><span class="sched-time">11 h 30</span><span class="sched-act"><b>Pont de verre</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Zhangjiajie+Glass+Bridge" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Zhangjiajie+Glass+Bridge" target="_blank" rel="noopener">📍</a></span> — l'un des plus hauts du monde (~300 m de haut, ~430 m de long)</span></div>
-            <div class="sched-row"><span class="sched-time">13 h 30</span><span class="sched-act">Déjeuner · remontée + retour hôtel</span></div>
-            <div class="sched-row"><span class="sched-time">15 h 30</span><span class="sched-act">Transfert vers <b>Future Home Homestay</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Tianmen+Mountain+Cableway+Zhangjiajie" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Tianmen+Cableway+Zhangjiajie" target="_blank" rel="noopener">📍</a></span> (proche téléphérique Tianmen)</span></div>
+            <div class="sched-row"><span class="sched-time">06 h 15</span><span class="sched-act">Réveil · petit-déjeuner rapide — l'entrée est à créneau imposé</span></div>
+            <div class="sched-row"><span class="sched-time">07 h 00</span><span class="sched-act"><b>Entrée Wulingyuan — porte Est, ligne B</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Wulingyuan+Scenic+Area+East+Gate+Zhangjiajie" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Wulingyuan+East+Gate" target="_blank" rel="noopener">📍</a></span> · créneau <b>07:00 → 08:00 impératif</b> · billet 4 jours, entrées illimitées, bus écologique inclus · <b>passeports obligatoires</b> <span style="font-size:11px;font-weight:800;color:#0a7a55;background:#e2f3ec;border-radius:999px;padding:2px 7px;white-space:nowrap">✅ réservé</span></span></div>
+            <div class="sched-row"><span class="sched-time">08 h 00</span><span class="sched-act"><b>Ascenseur de Bailong</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Bailong+Elevator+Zhangjiajie" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Bailong+Elevator+Zhangjiajie" target="_blank" rel="noopener">📍</a></span> — le plus haut du monde (~1 min 28 s) · <b>billet aller simple daté du 14/08</b> · contrôle à la station haute ou basse · ⚠️ <b>2 billets seulement</b> (Mathieu et Sandrine) <span style="font-size:11px;font-weight:800;color:#0a7a55;background:#e2f3ec;border-radius:999px;padding:2px 7px;white-space:nowrap">✅ réservé</span></span></div>
+            <div class="sched-row"><span class="sched-time">08 h 30</span><span class="sched-act"><b>Zone Yuanjiajie</b> — les pitons Avatar, pont entre Ciel et Terre</span></div>
+            <div class="sched-row"><span class="sched-time">12 h 30</span><span class="sched-act">Déjeuner dans le parc (restaurants navette)</span></div>
+            <div class="sched-row"><span class="sched-time">14 h 00</span><span class="sched-act"><b>Zone Tianzi Mountain</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Tianzi+Mountain+Zhangjiajie" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Tianzi+Mountain+Zhangjiajie" target="_blank" rel="noopener">📍</a></span> — mer de nuages en fin de journée</span></div>
+            <div class="sched-row"><span class="sched-time">17 h 30</span><span class="sched-act">Retour Manyuan · dîner · repos (beaucoup de marche !)</span></div>
           </div>
           </div>
           <div class="sched-day">
-            <div class="sd-title">J4 · 16/08 — Montagne Tianmen</div>
+            <div class="sd-title">J3 · Samedi 15/08 — Grand Canyon &amp; pont de verre</div>
             <div class="sd-body">
-            <div class="sched-row"><span class="sched-time">08 h 00</span><span class="sched-act"><b>Téléphérique de Tianmen</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Tianmen+Mountain+Zhangjiajie" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Tianmen+Mountain+Zhangjiajie" target="_blank" rel="noopener">📍</a></span> — le plus long du monde (~7,5 km, ~30 min de montée)</span></div>
-            <div class="sched-row"><span class="sched-time">09 h 00</span><span class="sched-act"><b>Porte du Ciel</b> (Tianmen) — 999 marches, vue à couper le souffle · sentiers vitrés</span></div>
+            <div class="sched-row"><span class="sched-time">08 h 30</span><span class="sched-act"><b>Grand Canyon de Zhangjiajie</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Zhangjiajie+Grand+Canyon" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Zhangjiajie+Grand+Canyon" target="_blank" rel="noopener">📍</a></span> — descente dans les gorges, passerelles, ~3 h · <i>billet séparé, non réservé</i></span></div>
+            <div class="sched-row"><span class="sched-time">11 h 30</span><span class="sched-act"><b>Pont de verre</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Zhangjiajie+Glass+Bridge" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Zhangjiajie+Glass+Bridge" target="_blank" rel="noopener">📍</a></span> — ~300 m de haut, ~430 m de long</span></div>
+            <div class="sched-row"><span class="sched-time">13 h 30</span><span class="sched-act">Déjeuner · remontée · retour hôtel</span></div>
+            <div class="sched-row"><span class="sched-time">15 h 30</span><span class="sched-act"><i>Variante</i> : votre billet Wulingyuan est encore valable — 2ᵉ journée dans le parc (Golden Whip Stream, Yangjiajie) si vous préférez éviter la foule du samedi au canyon</span></div>
+            <div class="sched-row"><span class="sched-time">19 h 00</span><span class="sched-act">Dernière nuit au Manyuan · <b>préparez les bagages</b> : changement d'hôtel demain</span></div>
+          </div>
+          </div>
+          <div class="sched-day">
+            <div class="sd-title">J4 · Dimanche 16/08 — Tianmen &amp; changement d'hôtel</div>
+            <div class="sd-body">
+            <div class="sched-row"><span class="sched-time">07 h 15</span><span class="sched-act">Checkout <b>Manyuan</b> · DiDi vers Zhangjiajie ville (~40 min)</span></div>
+            <div class="sched-row"><span class="sched-time">08 h 00</span><span class="sched-act"><b>Téléphérique de Tianmen — ligne B</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Tianmen+Mountain+Zhangjiajie" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Tianmen+Mountain+Zhangjiajie" target="_blank" rel="noopener">📍</a></span> · montée par le <b>téléphérique express de la grotte</b>, descente par le <b>téléphérique de la montagne</b> · entrée <b>08:00 → 09:00</b> · ⚠️ <b>3 billets seulement</b> (Manon n'y figure pas) <span style="font-size:11px;font-weight:800;color:#0a7a55;background:#e2f3ec;border-radius:999px;padding:2px 7px;white-space:nowrap">✅ réservé</span></span></div>
+            <div class="sched-row"><span class="sched-time">09 h 30</span><span class="sched-act"><b>Porte du Ciel</b> — 999 marches, sentiers vitrés, vue à couper le souffle</span></div>
             <div class="sched-row"><span class="sched-time">12 h 00</span><span class="sched-act">Déjeuner au sommet · redescente par la <b>route aux 99 virages</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=99+Bends+Road+Tianmen+Zhangjiajie" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=99+Bends+Tianmen+Zhangjiajie" target="_blank" rel="noopener">📍</a></span> (bus inclus)</span></div>
-            <div class="sched-row"><span class="sched-time">15 h 00</span><span class="sched-act">Retour homestay · repos</span></div>
+            <div class="sched-row"><span class="sched-time">15 h 30</span><span class="sched-act">Check-in <b>Future Home · Aesthetic Homestay</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Future+Home+Aesthetic+Homestay+Tianmen+Cableway+Zhangjiajie" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Future+Home+Tianmen+Cableway" target="_blank" rel="noopener">📍</a></span> (station du téléphérique de Tianmen) · repos</span></div>
           </div>
           </div>
           <div class="sched-day">
-            <div class="sd-title">J5 · 17/08 — Départ vers Guilin</div>
+            <div class="sd-title">J5 · Lundi 17/08 — Dernier jour du billet parc</div>
             <div class="sd-body">
-            <div class="sched-row"><span class="sched-time">05 h 30</span><span class="sched-act">Réveil tôt · checkout</span></div>
-            <div class="sched-row"><span class="sched-time">06 h 30</span><span class="sched-act">DiDi vers gare de Zhangjiajie <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Zhangjiajie+Railway+Station" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Zhangjiajie+Train+Station" target="_blank" rel="noopener">📍</a></span> ou aéroport DYG <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Zhangjiajie+Hehua+Airport" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Zhangjiajie+Airport" target="_blank" rel="noopener">📍</a></span></span></div>
-            <div class="sched-row"><span class="sched-time">07 h 17</span><span class="sched-act">Train D3967 Zhangjiajie → Guilin (~7 h) <i>ou vol ~1 h</i></span></div>
+            <div class="sched-row"><span class="sched-time">Matin</span><span class="sched-act"><b>Votre billet Wulingyuan est encore valable aujourd'hui</b> (4ᵉ et dernier jour) — retour possible dans le parc pour les zones non vues : <b>Golden Whip Stream</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Golden+Whip+Stream+Zhangjiajie" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Golden+Whip+Stream" target="_blank" rel="noopener">📍</a></span>, <b>Yangjiajie</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Yangjiajie+Zhangjiajie" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Yangjiajie+Zhangjiajie" target="_blank" rel="noopener">📍</a></span></span></div>
+            <div class="sched-row"><span class="sched-time">Ou</span><span class="sched-act">Journée calme à Zhangjiajie ville · marché · <b>récupération avant la longue journée de train de demain</b></span></div>
+            <div class="sched-row"><span class="sched-time">18 h 00</span><span class="sched-act">Préparation des bagages · <b>vérifiez vos billets de train pour Guilin</b> · couchez-vous tôt</span></div>
+          </div>
+          </div>
+          <div class="sched-day">
+            <div class="sd-title">J6 · Mardi 18/08 — Départ vers Guilin</div>
+            <div class="sd-body">
+            <div class="sched-row"><span class="sched-time">05 h 30</span><span class="sched-act">Réveil tôt · checkout <b>Future Home</b></span></div>
+            <div class="sched-row"><span class="sched-time">06 h 30</span><span class="sched-act">DiDi vers la gare de Zhangjiajie <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Zhangjiajie+Railway+Station" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Zhangjiajie+Train+Station" target="_blank" rel="noopener">📍</a></span> ou l'aéroport DYG <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Zhangjiajie+Hehua+Airport" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Zhangjiajie+Airport" target="_blank" rel="noopener">📍</a></span></span></div>
+            <div class="sched-row"><span class="sched-time">07 h 17</span><span class="sched-act">Train <b>D3967</b> Zhangjiajie → Guilin (~7 h) <i>ou vol ~1 h</i> — <b>⚠️ pas encore réservé</b></span></div>
           </div>
           </div>
         </div>
@@ -631,7 +682,7 @@
         <div class="h-sub">Programme jour par jour</div>
         <div class="sched">
           <div class="sched-day">
-            <div class="sd-title">J1 · 18/08 — Guilin, collines &amp; lacs</div>
+            <div class="sd-title">J1 · Mardi 18/08 — Guilin, collines &amp; lacs</div>
             <div class="sd-body">
             <div class="sched-row"><span class="sched-time">Arrivée</span><span class="sched-act">Arrivée gare de Guilin / Guilin Nord <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Guilin+Railway+Station" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Guilin+Railway+Station" target="_blank" rel="noopener">📍</a></span> · check-in Universal International Hotel <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Universal+International+Hotel+Guilin+Jiefang+East+Road" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Universal+International+Hotel+Guilin" target="_blank" rel="noopener">📍</a></span></span></div>
             <div class="sched-row"><span class="sched-time">14 h 00</span><span class="sched-act"><b>Colline de la Trompe d'Éléphant</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Elephant+Trunk+Hill+Guilin" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Elephant+Trunk+Hill+Guilin" target="_blank" rel="noopener">📍</a></span> — le symbole de Guilin, au confluent des rivières Li et Peach Blossom, ~1 h</span></div>
@@ -641,7 +692,7 @@
           </div>
           </div>
           <div class="sched-day">
-            <div class="sd-title">J2 · 19/08 — Croisière rivière Li → Yangshuo</div>
+            <div class="sd-title">J2 · Mercredi 19/08 — Croisière rivière Li → Yangshuo</div>
             <div class="sd-body">
             <div class="sched-row"><span class="sched-time">07 h 30</span><span class="sched-act">Départ hôtel · taxi/DiDi vers l'embarcadère de Zhujiang Pier <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Zhujiang+Pier+Guilin+Li+River" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Zhujiang+Pier+Guilin" target="_blank" rel="noopener">📍</a></span></span></div>
             <div class="sched-row"><span class="sched-time">09 h 00</span><span class="sched-act"><b>Croisière rivière Li</b> — départ · 83 km de karsts · paysages du billet 20 ¥<span style="color:var(--muted);font-size:0.88em;font-style:italic"> (≈ 2.5 €)</span> · ~4 h 30</span></div>
@@ -651,16 +702,15 @@
           </div>
           </div>
           <div class="sched-day">
-            <div class="sd-title">J3 · 20/08 — Radeau Yulong &amp; spectacle</div>
+            <div class="sd-title">J3 · Jeudi 20/08 — Radeau Yulong &amp; spectacle</div>
             <div class="sd-body">
             <div class="sched-row"><span class="sched-time">08 h 30</span><span class="sched-act"><b>Radeau de bambou rivière Yulong</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Yulong+River+Bamboo+Raft+Yangshuo" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Yulong+River+Raft" target="_blank" rel="noopener">📍</a></span> — 2–3 h de navigation tranquille entre les karsts</span></div>
             <div class="sched-row"><span class="sched-time">11 h 30</span><span class="sched-act">Village de <b>Xingping</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Xingping+Ancient+Town+Yangshuo" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Xingping+Yangshuo" target="_blank" rel="noopener">📍</a></span> · vue sur le paysage du billet 20 ¥ (vrai site) · déjeuner</span></div>
-            <div class="sched-row"><span class="sched-time">14 h 30</span><span class="sched-act">Retour Yangshuo · repos / West Street · shopping</span></div>
-            <div class="sched-row"><span class="sched-time">19 h 30</span><span class="sched-act"><b>Impression Liu Sanjie</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Impression+Liu+Sanjie+Yangshuo" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Impression+Liu+Sanjie" target="_blank" rel="noopener">📍</a></span> — spectacle de Zhang Yimou sur l'eau (20 h 00), réserver à l'avance</span></div>
+            <div class="sched-row"><span class="sched-time">14 h 30</span><span class="sched-act">Retour Yangshuo · repos · <b>West Street</b> · shopping · dîner libre (soirée calme après deux journées chargées)</span></div>
           </div>
           </div>
           <div class="sched-day">
-            <div class="sd-title">J4 · 21/08 — Retour Guilin &amp; repos</div>
+            <div class="sd-title">J4 · Vendredi 21/08 — Retour Guilin &amp; repos</div>
             <div class="sd-body">
             <div class="sched-row"><span class="sched-time">09 h 00</span><span class="sched-act">Checkout Yangshuo · bus public ou DiDi → Guilin (~1 h) · check-in hôtel Guilin</span></div>
             <div class="sched-row"><span class="sched-time">11 h 00</span><span class="sched-act"><b>Colline du Chameau</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Camel+Hill+Guilin" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Camel+Hill+Guilin" target="_blank" rel="noopener">📍</a></span> ou <b>parc des Sept Étoiles</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Seven+Star+Park+Guilin" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Seven+Star+Park+Guilin" target="_blank" rel="noopener">📍</a></span> · balade légère</span></div>
@@ -706,7 +756,7 @@
         <div class="h-sub">Programme jour par jour</div>
         <div class="sched">
           <div class="sched-day">
-            <div class="sd-title">J1 · 22/08 — Arrivée &amp; détente</div>
+            <div class="sd-title">J1 · Samedi 22/08 — Arrivée &amp; détente</div>
             <div class="sd-body">
             <div class="sched-row"><span class="sched-time">Arrivée</span><span class="sched-act">Arrivée Shenzhen Nord <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Shenzhen+North+Railway+Station" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Shenzhen+North+Station" target="_blank" rel="noopener">📍</a></span> · métro ligne 4 → Futian · check-in Kary Apartment <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Kary+Apartment+Bagua+3rd+Road+Futian+Shenzhen" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Kary+Apartment+Futian+Shenzhen" target="_blank" rel="noopener">📍</a></span></span></div>
             <div class="sched-row"><span class="sched-time">16 h 00</span><span class="sched-act"><b>Promenade baie de Shenzhen</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Shenzhen+Bay+Park" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Shenzhen+Bay+Park" target="_blank" rel="noopener">📍</a></span> — front de mer, skyline Hong Kong visible au loin, coucher de soleil</span></div>
@@ -714,7 +764,7 @@
           </div>
           </div>
           <div class="sched-day">
-            <div class="sd-title">J2 · 23/08 — Parc à thème ou high-tech</div>
+            <div class="sd-title">J2 · Dimanche 23/08 — Parc à thème ou high-tech</div>
             <div class="sd-body">
             <div class="sched-row"><span class="sched-time">09 h 00</span><span class="sched-act">Option A — <b>Window of the World</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Window+of+the+World+Shenzhen" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Window+of+the+World+Shenzhen" target="_blank" rel="noopener">📍</a></span> (miniatures monuments mondiaux, parfait en famille) <i>ou</i></span></div>
             <div class="sched-row"><span class="sched-time">09 h 00</span><span class="sched-act">Option B — <b>Happy Valley Shenzhen</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Happy+Valley+Shenzhen" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Happy+Valley+Shenzhen" target="_blank" rel="noopener">📍</a></span> (parc d'attractions, manèges)</span></div>
@@ -723,7 +773,7 @@
           </div>
           </div>
           <div class="sched-day">
-            <div class="sd-title">J3 · 24/08 — Avant départ HK</div>
+            <div class="sd-title">J3 · Lundi 24/08 — Avant départ HK</div>
             <div class="sd-body">
             <div class="sched-row"><span class="sched-time">09 h 00</span><span class="sched-act">Matinée libre · <b>OCT-LOFT</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=OCT+Loft+Creative+Culture+Park+Shenzhen" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=OCT+Loft+Shenzhen" target="_blank" rel="noopener">📍</a></span> (quartier créatif, street art, cafés)</span></div>
             <div class="sched-row"><span class="sched-time">12 h 00</span><span class="sched-act">Déjeuner · checkout</span></div>
@@ -775,15 +825,14 @@
         <div class="h-sub">Programme jour par jour</div>
         <div class="sched">
           <div class="sched-day">
-            <div class="sd-title">J1 · 25/08 — Passage frontière &amp; grand parc</div>
+            <div class="sd-title">J1 · Mardi 25/08 — Passage frontière &amp; grand parc</div>
             <div class="sd-body">
             <div class="sched-row"><span class="sched-time">Matin</span><span class="sched-act">Futian Port → MTR East Rail → Kowloon · check-in The Cityview <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=The+Cityview+YMCA+23+Waterloo+Road+Kowloon+Hong+Kong" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=The+Cityview+Kowloon" target="_blank" rel="noopener">📍</a><a class="ml-a" href="https://www.google.com/maps/search/?api=1&query=The+Cityview+23+Waterloo+Road+Kowloon+Hong+Kong" target="_blank" rel="noopener">🌍</a></span> · achat carte <b>Octopus</b> dès l'arrivée MTR</span></div>
-            <div class="sched-row"><span class="sched-time">10 h 00</span><span class="sched-act"><b>Disneyland Hong Kong</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Hong+Kong+Disneyland" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Hong+Kong+Disneyland" target="_blank" rel="noopener">📍</a><a class="ml-a" href="https://www.google.com/maps/search/?api=1&query=Hong+Kong+Disneyland" target="_blank" rel="noopener">🌍</a></span> <i>ou</i> <b>Ocean Park</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Ocean+Park+Hong+Kong" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Ocean+Park+Hong+Kong" target="_blank" rel="noopener">📍</a><a class="ml-a" href="https://www.google.com/maps/search/?api=1&query=Ocean+Park+Hong+Kong" target="_blank" rel="noopener">🌍</a></span> — journée complète dans un seul parc</span></div>
             <div class="sched-row"><span class="sched-time">20 h 00</span><span class="sched-act">Retour hôtel · dîner Kowloon</span></div>
           </div>
           </div>
           <div class="sched-day">
-            <div class="sd-title">J2 · 26/08 — Pic Victoria &amp; Symphony of Lights</div>
+            <div class="sd-title">J2 · Mercredi 26/08 — Pic Victoria &amp; Symphony of Lights</div>
             <div class="sd-body">
             <div class="sched-row"><span class="sched-time">08 h 30</span><span class="sched-act"><b>Pic Victoria</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Victoria+Peak+Hong+Kong" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Victoria+Peak+Hong+Kong" target="_blank" rel="noopener">📍</a><a class="ml-a" href="https://www.google.com/maps/search/?api=1&query=Victoria+Peak+Hong+Kong" target="_blank" rel="noopener">🌍</a></span> — tram Peak Tram dès l'ouverture (éviter les files de l'après-midi) · vue 360° sur la skyline</span></div>
             <div class="sched-row"><span class="sched-time">11 h 00</span><span class="sched-act">Descente · <b>Stanley Market</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Stanley+Market+Hong+Kong" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Stanley+Market+Hong+Kong" target="_blank" rel="noopener">📍</a><a class="ml-a" href="https://www.google.com/maps/search/?api=1&query=Stanley+Market+Hong+Kong" target="_blank" rel="noopener">🌍</a></span> <i>ou</i> <b>Central + Soho</b> <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Central+Hong+Kong" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Central+Hong+Kong" target="_blank" rel="noopener">📍</a><a class="ml-a" href="https://www.google.com/maps/search/?api=1&query=Central+Hong+Kong" target="_blank" rel="noopener">🌍</a></span> · déjeuner dim sum</span></div>
@@ -793,7 +842,7 @@
           </div>
           </div>
           <div class="sched-day">
-            <div class="sd-title">27/08 — Départ</div>
+            <div class="sd-title">Jeudi 27/08 — Départ</div>
             <div class="sd-body">
             <div class="sched-row"><span class="sched-time">05 h 00</span><span class="sched-act">Réveil · transfert aéroport HKG <span class="ml-wrap"><a class="ml-a" href="https://maps.apple.com/?q=Hong+Kong+International+Airport" target="_blank" rel="noopener">🧭</a><a class="ml-a" href="https://uri.amap.com/search?keyword=Hong+Kong+Airport" target="_blank" rel="noopener">📍</a><a class="ml-a" href="https://www.google.com/maps/search/?api=1&query=Hong+Kong+International+Airport" target="_blank" rel="noopener">🌍</a></span> (~45 min taxi/bus)</span></div>
             <div class="sched-row"><span class="sched-time">08 h 30</span><span class="sched-act">Vol Hong Kong → Pékin (correspondance → Paris) — voir alerte vigilance</span></div>
@@ -810,19 +859,56 @@
     <div class="sec-title"><span class="dot"></span><h2>À réserver soi-même</h2></div>
     <p class="hint">🔗 Réservation depuis l’Europe : <b>Trip.com</b> (passeport, anglais, cartes Visa/MC) et <b>Klook</b> sont les plus simples. Liens « Réserver » sur chaque ligne.</p>
     <div class="book">
-      <div class="row"><div class="d">18 août</div><div class="m"><div class="tr">Zhangjiajie → Guilin</div><div class="su">Train direct D3967 ~7 h (07:17) ou vol ~1 h</div><div class="bk"><a href="https://www.trip.com/trains/china/" target="_blank" rel="noopener">Réserver sur Trip.com ↗</a></div></div><span class="badge b-amber">dès ~3 août</span></div>
-      <div class="row"><div class="d">22 août</div><div class="m"><div class="tr">Guilin → Shenzhen Nord</div><div class="su">TGV ~2 h 40–3 h 30 · ~17 trains/jour</div><div class="bk"><a href="https://www.trip.com/trains/china/" target="_blank" rel="noopener">Réserver sur Trip.com ↗</a></div></div><span class="badge b-amber">dès ~7 août</span></div>
+      <div class="row"><div class="d">18 août</div><div class="m"><div class="tr">Zhangjiajie → Guilin</div><div class="su">Train direct D3967 ~7 h (07:17) ou vol ~1 h</div><div class="bk"><a href="https://www.trip.com/trains/china/" target="_blank" rel="noopener">Réserver sur Trip.com ↗</a></div></div><span class="badge" style="background:#fde2dc;color:#c0432c">🚨 à réserver</span></div>
+      <div class="row"><div class="d">22 août</div><div class="m"><div class="tr">Guilin → Shenzhen Nord</div><div class="su">TGV ~2 h 40–3 h 30 · ~17 trains/jour</div><div class="bk"><a href="https://www.trip.com/trains/china/" target="_blank" rel="noopener">Réserver sur Trip.com ↗</a></div></div><span class="badge" style="background:#fde2dc;color:#c0432c">🚨 à réserver</span></div>
       <div class="row"><div class="d">25 août</div><div class="m"><div class="tr">Shenzhen Futian → Hong Kong</div><div class="su">Métro + MTR, passage frontière 30–45 min</div></div><span class="badge b-grey">sur place</span></div>
     </div>
     <div class="tip" style="margin-top:11px"><span class="ti">🎫</span><div>Le 18 août est le point sensible : un seul train direct, tôt le matin. <b>Pré-réservez via Trip.com</b> dès que possible, ou comparez un vol DYG→KWL.</div></div>
     <div class="sec-title" style="margin-top:18px"><span class="dot"></span><h2 style="font-size:16px">Aussi à réserver — sites &amp; activités</h2></div>
     <div class="book">
-      <div class="row"><div class="d">Pékin</div><div class="m"><div class="tr">Cité Interdite + Grande Muraille (Mutianyu)</div><div class="su">Créneaux nominatifs avec passeport — réserver en ligne quelques jours avant</div><div class="bk"><a href="https://www.trip.com/things-to-do/list?keyword=Forbidden%20City%20Mutianyu" target="_blank" rel="noopener">Réserver sur Trip.com ↗</a> · <a href="https://www.klook.com/search/?query=Forbidden%20City%20Mutianyu%20Great%20Wall" target="_blank" rel="noopener">Klook ↗</a></div></div><span class="badge b-amber">à l’avance</span></div>
-      <div class="row"><div class="d">Pékin</div><div class="m"><div class="tr">🎢 Universal Beijing Resort (11/08)</div><div class="su">Billets nominatifs — adulte ≈ 398–598 ¥<span style="color:var(--muted);font-size:0.88em;font-style:italic"> (≈ 50–80 €)</span> · enfant ≈ 298–448 ¥<span style="color:var(--muted);font-size:0.88em;font-style:italic"> (≈ 40–60 €)</span> · métro L7, station « Universal Resort »</div><div class="bk"><a href="https://www.trip.com/things-to-do/list?keyword=Universal%20Beijing%20Resort" target="_blank" rel="noopener">Réserver sur Trip.com ↗</a> · <a href="https://www.klook.com/search/?query=Universal%20Beijing%20Resort" target="_blank" rel="noopener">Klook ↗</a> · <a href="https://www.universalbeijingresort.com" target="_blank" rel="noopener">Site officiel ↗</a></div></div><span class="badge b-amber">à l'avance</span></div>
-      <div class="row"><div class="d">Zhangjiajie</div><div class="m"><div class="tr">Tianmen + parc de Wulingyuan</div><div class="su">Créneaux téléphérique ; bons inclus dans la résa Future Home</div><div class="bk"><a href="https://www.trip.com/things-to-do/list?keyword=Zhangjiajie%20Tianmen" target="_blank" rel="noopener">Réserver sur Trip.com ↗</a> · <a href="https://www.klook.com/activity/189297-/" target="_blank" rel="noopener">Klook ↗</a></div></div><span class="badge b-amber">à l’avance</span></div>
+      <div class="row"><div class="d">Pékin</div><div class="m"><div class="tr">Cité Interdite (11/08) — Mutianyu ✅ réservé le 10/08</div><div class="su">Créneaux nominatifs avec passeport — réserver en ligne quelques jours avant</div><div class="bk"><a href="https://www.trip.com/things-to-do/list?keyword=Forbidden%20City%20Mutianyu" target="_blank" rel="noopener">Réserver sur Trip.com ↗</a> · <a href="https://www.klook.com/search/?query=Forbidden%20City%20Mutianyu%20Great%20Wall" target="_blank" rel="noopener">Klook ↗</a></div></div><span class="badge b-amber">à l’avance</span></div>
+      <div class="row"><div class="d">Pékin</div><div class="m"><div class="tr">🎢 Universal Beijing Resort (12/08) — ✅ réservé</div><div class="su">Billets nominatifs — adulte ≈ 398–598 ¥<span style="color:var(--muted);font-size:0.88em;font-style:italic"> (≈ 50–80 €)</span> · enfant ≈ 298–448 ¥<span style="color:var(--muted);font-size:0.88em;font-style:italic"> (≈ 40–60 €)</span> · métro L7, station « Universal Resort »</div><div class="bk"><a href="https://www.trip.com/things-to-do/list?keyword=Universal%20Beijing%20Resort" target="_blank" rel="noopener">Réserver sur Trip.com ↗</a> · <a href="https://www.klook.com/search/?query=Universal%20Beijing%20Resort" target="_blank" rel="noopener">Klook ↗</a> · <a href="https://www.universalbeijingresort.com" target="_blank" rel="noopener">Site officiel ↗</a></div></div><span class="badge b-amber">à l'avance</span></div>
+      <div class="row"><div class="d">Zhangjiajie</div><div class="m"><div class="tr">Tianmen + parc de Wulingyuan — ✅ réservés</div><div class="su">Créneaux téléphérique ; bons inclus dans la résa Future Home</div><div class="bk"><a href="https://www.trip.com/things-to-do/list?keyword=Zhangjiajie%20Tianmen" target="_blank" rel="noopener">Réserver sur Trip.com ↗</a> · <a href="https://www.klook.com/activity/189297-/" target="_blank" rel="noopener">Klook ↗</a></div></div><span class="badge b-amber">à l’avance</span></div>
       <div class="row"><div class="d">Guilin</div><div class="m"><div class="tr">Croisière rivière Li</div><div class="su">Réserver en ligne ou via l’hôtel</div><div class="bk"><a href="https://www.trip.com/things-to-do/list?keyword=Li%20River%20Cruise%20Guilin" target="_blank" rel="noopener">Réserver sur Trip.com ↗</a> · <a href="https://www.klook.com/search/?query=Li%20River%20cruise%20Guilin%20Yangshuo" target="_blank" rel="noopener">Klook ↗</a></div></div><span class="badge b-amber">à l’avance</span></div>
-      <div class="row"><div class="d">Hong Kong</div><div class="m"><div class="tr">Disneyland ou Ocean Park</div><div class="su">Billets datés en ligne (choisir un seul)</div><div class="bk"><a href="https://www.trip.com/things-to-do/list?keyword=Hong%20Kong%20Disneyland%20Ocean%20Park" target="_blank" rel="noopener">Réserver sur Trip.com ↗</a> · <a href="https://www.hongkongdisneyland.com" target="_blank" rel="noopener">Disneyland ↗</a> · <a href="https://www.oceanpark.com.hk" target="_blank" rel="noopener">Ocean Park ↗</a></div></div><span class="badge b-amber">à l’avance</span></div>
     </div>
+  </section>
+
+
+  <!-- RESAS -->
+  <section id="resas">
+    <div class="sec-title"><span class="dot"></span><h2>Ce qui est déjà réservé</h2></div>
+    <p class="hint">✈️ Vols &amp; transports — relevé du 5 août 2026.</p>
+    <div class="book">
+      <div class="row"><div class="d">8 août</div><div class="m"><div class="tr">AT779 · Paris CDG T2B 13:05 → Casablanca T2 15:15</div><div class="su">Royal Air Maroc · 3 h 10 · 4 passagers</div></div><span class="badge" style="background:#e2f3ec;color:#0a7a55">✅ confirmé</span></div>
+      <div class="row"><div class="d">8 août</div><div class="m"><div class="tr">AT230 · Casablanca T1 16:05 → Pékin PKX 11:25 (+1)</div><div class="su">Royal Air Maroc · 12 h 20 · ⚠️ correspondance de 50 min, changement de terminal</div></div><span class="badge" style="background:#e2f3ec;color:#0a7a55">✅ confirmé</span></div>
+      <div class="row"><div class="d">13 août</div><div class="m"><div class="tr">CA8609 · Pékin PKX 14:00 → Zhangjiajie DYG 16:30</div><div class="su">Air China · arrivée terminal T2</div></div><span class="badge" style="background:#e2f3ec;color:#0a7a55">✅ confirmé</span></div>
+      <div class="row"><div class="d">18 août</div><div class="m"><div class="tr">Zhangjiajie → Guilin</div><div class="su">Train D3967 ~7 h (07:17) ou vol ~1 h</div></div><span class="badge" style="background:#fde2dc;color:#c0432c">🚨 à faire</span></div>
+      <div class="row"><div class="d">22 août</div><div class="m"><div class="tr">Guilin → Shenzhen Nord</div><div class="su">TGV ~3 h · ~17 trains/jour</div></div><span class="badge" style="background:#fde2dc;color:#c0432c">🚨 à faire</span></div>
+      <div class="row"><div class="d">27 août</div><div class="m"><div class="tr">CA118 · Hong Kong T1 08:30 → Pékin Capital T3 12:00</div><div class="su">Air China · vol allongé de 20 min par la compagnie</div></div><span class="badge" style="background:#e2f3ec;color:#0a7a55">✅ confirmé</span></div>
+      <div class="row"><div class="d">27 août</div><div class="m"><div class="tr">CA933 · Pékin Capital T3 13:30 → Paris CDG 18:15</div><div class="su">Air China · ⚠️ 1 h 30 de correspondance seulement</div></div><span class="badge" style="background:#e2f3ec;color:#0a7a55">✅ confirmé</span></div>
+    </div>
+    <p class="hint" style="margin-top:16px">🏨 Hébergements</p>
+    <div class="book">
+      <div class="row"><div class="d">9 → 13 août</div><div class="m"><div class="tr">Three Cats Homestay · Pékin</div><div class="su">Sanlitun / Gongti, Chaoyang · 4 nuits · réglé à part (493,56 €)</div></div><span class="badge" style="background:#e2f3ec;color:#0a7a55">✅ confirmé</span></div>
+      <div class="row"><div class="d">13 → 16 août</div><div class="m"><div class="tr">Manyuan Resort Hotel · Wulingyuan</div><div class="su">Trois chambres · 3 nuits · réservé au nom de vos amis</div></div><span class="badge" style="background:#e2f3ec;color:#0a7a55">✅ confirmé</span></div>
+      <div class="row"><div class="d">16 → 18 août</div><div class="m"><div class="tr">Future Home · Aesthetic Homestay</div><div class="su">Suite familiale deux chambres · 2 nuits · station du téléphérique de Tianmen</div></div><span class="badge" style="background:#e2f3ec;color:#0a7a55">✅ confirmé</span></div>
+      <div class="row"><div class="d">18 → 19 août</div><div class="m"><div class="tr">Universal International Hotel · Guilin</div><div class="su">Chambre familiale · 1 nuit</div></div><span class="badge" style="background:#e2f3ec;color:#0a7a55">✅ confirmé</span></div>
+      <div class="row"><div class="d">19 → 21 août</div><div class="m"><div class="tr">Wude Jiayuan Wellness Resort · Yangshuo</div><div class="su">Chambre 2 lits · 2 nuits · rivière Yulong</div></div><span class="badge" style="background:#e2f3ec;color:#0a7a55">✅ confirmé</span></div>
+      <div class="row"><div class="d">21 → 22 août</div><div class="m"><div class="tr">Universal International Hotel · Guilin</div><div class="su">Chambre familiale · 1 nuit</div></div><span class="badge" style="background:#e2f3ec;color:#0a7a55">✅ confirmé</span></div>
+      <div class="row"><div class="d">22 → 25 août</div><div class="m"><div class="tr">Kary Apartment · Shenzhen</div><div class="su">Swing 2 Double Room · 3 nuits · Futian</div></div><span class="badge" style="background:#e2f3ec;color:#0a7a55">✅ confirmé</span></div>
+      <div class="row"><div class="d">25 → 27 août</div><div class="m"><div class="tr">The Cityview · Chinese YMCA · Hong Kong</div><div class="su">Chambre familiale de luxe · 2 nuits · Waterloo Road, Kowloon</div></div><span class="badge" style="background:#e2f3ec;color:#0a7a55">✅ confirmé</span></div>
+    </div>
+    <p class="hint" style="margin-top:16px">🎟️ Sites &amp; activités</p>
+    <div class="book">
+      <div class="row"><div class="d">10 août</div><div class="m"><div class="tr">Grande Muraille de Mutianyu</div><div class="su">Excursion d'une journée, 4 adultes · RDV 08:00 au McDonald's, sortie B du métro Dongsi</div></div><span class="badge" style="background:#e2f3ec;color:#0a7a55">✅ confirmé</span></div>
+      <div class="row"><div class="d">12 août</div><div class="m"><div class="tr">Universal Beijing Resort</div><div class="su">Billets journée datée · 3 personnes + 1 enfant · parc ouvert 10:00–19:00</div></div><span class="badge" style="background:#e2f3ec;color:#0a7a55">✅ confirmé</span></div>
+      <div class="row"><div class="d">14 → 17 août</div><div class="m"><div class="tr">Parc national de Zhangjiajie (Wulingyuan)</div><div class="su">Billet 4 jours pour 4 · entrées illimitées · ⚠️ entrée 07:00–08:00, porte Est ligne B</div></div><span class="badge" style="background:#e2f3ec;color:#0a7a55">✅ confirmé</span></div>
+      <div class="row"><div class="d">14 août</div><div class="m"><div class="tr">Ascenseur de Bailong</div><div class="su">Aller simple · ⚠️ 2 billets seulement (Mathieu et Sandrine)</div></div><span class="badge" style="background:#e2f3ec;color:#0a7a55">✅ confirmé</span></div>
+      <div class="row"><div class="d">16 août</div><div class="m"><div class="tr">Montagne Tianmen</div><div class="su">Billet combiné ligne B · entrée 08:00–09:00 · ⚠️ 3 billets seulement (Manon absente)</div></div><span class="badge" style="background:#e2f3ec;color:#0a7a55">✅ confirmé</span></div>
+      <div class="row"><div class="d">11 août</div><div class="m"><div class="tr">Cité Interdite</div><div class="su">Billet nominatif en ligne avec passeport</div></div><span class="badge" style="background:#fde2dc;color:#c0432c">🚨 à faire</span></div>
+      <div class="row"><div class="d">19 août</div><div class="m"><div class="tr">Croisière sur la rivière Li</div><div class="su">Guilin → Yangshuo · ~4 h 30</div></div><span class="badge" style="background:#fde2dc;color:#c0432c">🚨 à faire</span></div>
+    </div>
+    <div class="tip" style="margin-top:11px"><span class="ti">🔐</span><div>Les numéros de réservation et références compagnie ne figurent pas ici : cette page est publique et indexable. Gardez-les dans l'appli Trip.com ou vos e-mails de confirmation.</div></div>
   </section>
 
   <!-- VIGILANCE -->
@@ -868,93 +954,6 @@
       </ul>
     </div>
 
-    <div class="pcard">
-      <h3>🎒 Vêtements &amp; sac à dos (objectif 40 L)</h3>
-      <p class="hint" style="margin:0 0 8px">Voyager léger en 40 L (cabine), lessive tous les 3–4 jours. Matières techniques ou mérinos à séchage rapide. Liens <b>Decathlon</b> pour chaque article.</p>
-
-      <table class="deca-table" style="width:100%;border-collapse:collapse;font-size:13.5px">
-        <thead>
-          <tr style="background:#f0f5fb;border-bottom:2px solid var(--line)">
-            <th style="padding:8px 10px;text-align:left;color:var(--navy);font-size:12px;text-transform:uppercase;letter-spacing:.5px">Article</th>
-            <th style="padding:8px 6px;text-align:center;color:var(--navy);font-size:12px">Qté</th>
-            <th style="padding:8px 6px;text-align:center;color:#1565c0;font-size:12px">🚹 Homme</th>
-            <th style="padding:8px 6px;text-align:center;color:#c2185b;font-size:12px">🚺 Femme</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="border-bottom:1px solid var(--line)">
-            <td style="padding:9px 10px;font-weight:600">T-shirt mérinos manches courtes <small style="display:block;font-weight:500;color:var(--muted);font-size:11.5px">Forclaz MT500 · anti-odeur, séchage rapide</small></td>
-            <td style="padding:9px 6px;text-align:center;color:var(--muted)">3–4</td>
-            <td style="padding:9px 6px;text-align:center"><a href="https://www.decathlon.fr/p/t-shirt-de-trek-manches-courtes-en-laine-merinos-homme-mt500/_/R-p-331113" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;color:#1565c0">Decathlon ↗</a></td>
-            <td style="padding:9px 6px;text-align:center"><a href="https://www.decathlon.fr/p/t-shirt-de-trek-manches-courtes-en-laine-merinos-femme-mt500/_/R-p-327360" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;color:#c2185b">Decathlon ↗</a></td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--line);background:#fafbfd">
-            <td style="padding:9px 10px;font-weight:600">Haut léger manches longues</td>
-            <td style="padding:9px 6px;text-align:center;color:var(--muted)">1–2</td>
-            <td style="padding:9px 6px;text-align:center"><a href="https://www.decathlon.fr/search/?Ntt=tshirt+manches+longues+randonnee+homme" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;color:#1565c0">Decathlon ↗</a></td>
-            <td style="padding:9px 6px;text-align:center"><a href="https://www.decathlon.fr/search/?Ntt=tshirt+manches+longues+randonnee+femme" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;color:#c2185b">Decathlon ↗</a></td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--line)">
-            <td style="padding:9px 10px;font-weight:600">Short de randonnée</td>
-            <td style="padding:9px 6px;text-align:center;color:var(--muted)">2</td>
-            <td style="padding:9px 6px;text-align:center"><a href="https://www.decathlon.fr/search/?Ntt=short+randonnee+homme" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;color:#1565c0">Decathlon ↗</a></td>
-            <td style="padding:9px 6px;text-align:center"><a href="https://www.decathlon.fr/search/?Ntt=short+randonnee+femme" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;color:#c2185b">Decathlon ↗</a></td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--line);background:#fafbfd">
-            <td style="padding:9px 10px;font-weight:600">Pantalon léger randonnée</td>
-            <td style="padding:9px 6px;text-align:center;color:var(--muted)">1</td>
-            <td style="padding:9px 6px;text-align:center"><a href="https://www.decathlon.fr/search/?Ntt=pantalon+randonnee+leger+homme" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;color:#1565c0">Decathlon ↗</a></td>
-            <td style="padding:9px 6px;text-align:center"><a href="https://www.decathlon.fr/search/?Ntt=pantalon+randonnee+leger+femme" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;color:#c2185b">Decathlon ↗</a></td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--line)">
-            <td style="padding:9px 10px;font-weight:600">Polaire fine</td>
-            <td style="padding:9px 6px;text-align:center;color:var(--muted)">1</td>
-            <td style="padding:9px 6px;text-align:center"><a href="https://www.decathlon.fr/search/?Ntt=polaire+fine+randonnee+homme" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;color:#1565c0">Decathlon ↗</a></td>
-            <td style="padding:9px 6px;text-align:center"><a href="https://www.decathlon.fr/search/?Ntt=polaire+fine+randonnee+femme" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;color:#c2185b">Decathlon ↗</a></td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--line);background:#fafbfd">
-            <td style="padding:9px 10px;font-weight:600">Veste imperméable légère</td>
-            <td style="padding:9px 6px;text-align:center;color:var(--muted)">1</td>
-            <td style="padding:9px 6px;text-align:center"><a href="https://www.decathlon.fr/search/?Ntt=veste+impermeable+randonnee+homme" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;color:#1565c0">Decathlon ↗</a></td>
-            <td style="padding:9px 6px;text-align:center"><a href="https://www.decathlon.fr/search/?Ntt=veste+impermeable+randonnee+femme" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;color:#c2185b">Decathlon ↗</a></td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--line)">
-            <td style="padding:9px 10px;font-weight:600">Poncho de pluie compact</td>
-            <td style="padding:9px 6px;text-align:center;color:var(--muted)">1/pers</td>
-            <td style="padding:9px 6px;text-align:center" colspan="2"><a href="https://www.decathlon.fr/search/?Ntt=poncho+pluie+randonnee" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;color:#555">Decathlon ↗</a></td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--line);background:#fafbfd">
-            <td style="padding:9px 10px;font-weight:600">Chaussures de marche / rando</td>
-            <td style="padding:9px 6px;text-align:center;color:var(--muted)">1 paire</td>
-            <td style="padding:9px 6px;text-align:center"><a href="https://www.decathlon.fr/search/?Ntt=chaussures+randonnee+homme" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;color:#1565c0">Decathlon ↗</a></td>
-            <td style="padding:9px 6px;text-align:center"><a href="https://www.decathlon.fr/search/?Ntt=chaussures+randonnee+femme" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;color:#c2185b">Decathlon ↗</a></td>
-          </tr>
-          <tr>
-            <td style="padding:9px 10px;font-weight:600">Sandales / tongs légères</td>
-            <td style="padding:9px 6px;text-align:center;color:var(--muted)">1 paire</td>
-            <td style="padding:9px 6px;text-align:center"><a href="https://www.decathlon.fr/search/?Ntt=sandales+voyage+homme" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;color:#1565c0">Decathlon ↗</a></td>
-            <td style="padding:9px 6px;text-align:center"><a href="https://www.decathlon.fr/search/?Ntt=sandales+voyage+femme" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;color:#c2185b">Decathlon ↗</a></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="h-sub" style="color:var(--blue);margin-top:14px">Accessoires indispensables</div>
-      <ul class="clean">
-        <li>Sous-vêtements ×4–5 + chaussettes ×4–5 (séchage rapide)</li>
-        <li>Chapeau / casquette, lunettes de soleil, maillot de bain</li>
-        <li>1 tenue « propre » pour les sorties, pyjama léger</li>
-      </ul>
-
-      <div class="h-sub" style="color:var(--blue);margin-top:10px">Lessive sur place</div>
-      <ul class="clean">
-        <li>Lessive solide ou en feuilles (compacte, OK en cabine)</li>
-        <li>Corde à linge élastique + pinces, bouchon d'évier universel, sac étanche pour le linge sale</li>
-      </ul>
-      <div class="two">
-        <div class="mini"><div class="ml">🎒 Optimiser 40 L</div><div class="mv">Sacs de compression, vêtements roulés, trousse minimaliste (flacons &lt; 100 ml).</div></div>
-        <div class="mini"><div class="ml">🧺 Rythme lessive</div><div class="mv">Une lessive tous les 3–4 jours : ~4–5 tenues suffisent pour 17 jours.</div></div>
-      </div>
-    </div>
     <div class="pcard">
       <h3>📍 Sur place — bons réflexes</h3>
       <ul class="clean">
